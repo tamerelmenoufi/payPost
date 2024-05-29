@@ -59,7 +59,7 @@ $(function(){
 
     $(".acessar").click(function(){
         cpf = $("#cpf").val();
-        if(!cpf && cpf.lenght != 14){
+        if(!cpf || cpf.lenght != 14){
             $.alert('Informe um CPF válido!');
             return;
         }
