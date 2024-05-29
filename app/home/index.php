@@ -58,7 +58,7 @@
 
 $(function(){
 
-    $("#cpf").masck("999.999.999-99");
+    $("#cpf").mask("999.999.999-99");
 
     $.ajax({
         url:"rodape/rodape.php",
