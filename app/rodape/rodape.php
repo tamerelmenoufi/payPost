@@ -50,14 +50,14 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
     }
     .rodape_area i{
         font-size:25px;
-        color:#a1a1a1;
+        color:#ffffff;
         margin:0;
         padding:0;
     }
     .rodape_area p{
         font-family:Insanibu;
         font-size:12px;
-        color:#a1a1a1;
+        color:#ffffff;
         margin:0;
         padding:0;
     }
