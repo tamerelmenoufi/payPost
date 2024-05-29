@@ -84,7 +84,7 @@
 
     function EnviarWapp($numero, $mensagem){
 
-        $numero = str_replace([' ','-','(',')'], false, $numero);
+        $numero = '55'.str_replace([' ','-','(',')'], false, $numero);
 
         $ch = curl_init();
 
