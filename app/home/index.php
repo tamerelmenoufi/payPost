@@ -26,7 +26,7 @@
 </style>
 
 <div class="home_corpo">
-    <div class="m-1">
+    <div class="m-3">
         <div class="row g-0">
             <div class="col">
                 <div class="d-flex justify-content-center  flex-column" >
