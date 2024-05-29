@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
     $c = mysqli_fetch_object(mysqli_query($con, "select * from categorias_itens where codigo = '{$_SESSION['categoria_itens']}'"));
 

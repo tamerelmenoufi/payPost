@@ -1,6 +1,6 @@
 <?php
 
-    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
     // exit();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))

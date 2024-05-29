@@ -1,5 +1,5 @@
 <?php
-include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
 $i = ((count($_SESSION['historico']))?(count($_SESSION['historico']) - 1):0);
     

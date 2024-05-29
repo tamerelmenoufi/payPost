@@ -1,6 +1,6 @@
 <?php
 
-    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
 
     // echo $query = "update produtos set 
