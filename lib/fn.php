@@ -101,9 +101,9 @@
         );
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-        echo $result = curl_exec($ch);
+        $result = curl_exec($ch);
         if (curl_errno($ch)) {
-            echo 'Error:' . curl_error($ch);
+            // echo 'Error:' . curl_error($ch);
         }
         curl_close($ch);
 
