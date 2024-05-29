@@ -1,6 +1,6 @@
 <?php
 
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkManaus/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
     // exit();
     
     $delTab = ['dashboard', 'relatorios','sisLog','logs'];
