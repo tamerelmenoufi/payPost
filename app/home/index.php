@@ -25,9 +25,9 @@
     }
 </style>
 
+<div class="home_topo"></div>
 <div class="home_corpo">
-    <div class="home_promocao"></div>
-    <div class="home_categorias"></div>
+    <h1>Teste</h1>
 </div>
 <div class="home_rodape"></div>
 
@@ -35,29 +35,20 @@
 
 $(function(){
 
+   
     $.ajax({
-        url:"home/banner.php",
+        url:"rodape/topo.php",
         success:function(dados){
-            $(".home_promocao").html(dados);
+            $(".home_topo").html(dados);
         }
     });
 
-
-    $.ajax({
-        url:"home/categorias.php",
-        success:function(dados){
-            $(".home_categorias").html(dados);
-        }
-    });
-
-    
     $.ajax({
         url:"rodape/rodape.php",
         success:function(dados){
             $(".home_rodape").html(dados);
         }
     });
-
 
 
 })
