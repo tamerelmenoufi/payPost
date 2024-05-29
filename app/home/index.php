@@ -30,7 +30,7 @@
         <div class="row g-0">
             <div class="col">
                 <div class="d-flex justify-content-center  flex-column" >
-                    <div class="card" style="width: 18rem;">
+                    <div class="card">
                         <img src="img/logo.png" class="card-img-top" />
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
