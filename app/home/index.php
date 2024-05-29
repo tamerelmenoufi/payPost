@@ -37,7 +37,7 @@ $(function(){
 
    
     $.ajax({
-        url:"rodape/topo.php",
+        url:"topo/topo.php",
         success:function(dados){
             $(".home_topo").html(dados);
         }
