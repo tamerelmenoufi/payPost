@@ -27,7 +27,7 @@
 
 <div class="home_corpo">
     <div class="m-1">
-        <div class="row">
+        <div class="row g-0">
             <div class="col">
                 <h1>Teste</h1>            
             </div>
