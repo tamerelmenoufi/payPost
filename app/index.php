@@ -102,12 +102,37 @@
             z-index:10;
         }
 
+        .bg_topo{
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            height:45px;
+            background-position: center bottom;
+            background-size:cover;
+            background-image:url("img/bg_topo.png");
+            z-index:-1;
+        }
+
+        .bg_rodape{
+            position:fixed;
+            left:0;
+            right:0;
+            bottom:0;
+            height:45px;
+            background-position: center top;
+            background-size:cover;
+            background-image:url("img/bg_topo.png");
+            z-index:-1;
+        }
+
 
     </Style>
   </head>
   <body translate="no">
 
-
+  <div class="bg_topo"></div>
+  <div class="bg_rodape"></div>
 
 
     <div class="row g-0">
