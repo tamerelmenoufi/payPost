@@ -27,7 +27,7 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         border:solid 0px #b60710;
         left:5px;
         right:5px;
-        top:0;
+        /* top:0; */
         bottom:80px;
         z-index:10;
     }
