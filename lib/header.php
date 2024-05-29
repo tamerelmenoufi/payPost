@@ -13,7 +13,7 @@
 <script src="<?=$urlPainel?>lib/vendor/jquery-3.6.0/jquery-3.6.0.min.js" ></script>
 <script src="<?=$urlPainel?>lib/vendor/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js" ></script>
 
-<link href="<?=$urlPainel?>lib/vendor/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+<link href="lib/vendor/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
 
 <script src="<?=$urlPainel?>lib/vendor/jQuery-Mask/jquery.mask.min.js" ></script>
 
