@@ -87,7 +87,6 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
 <div class="rodape">
     <div class="bg_rodape"></div>
     <div class="d-flex justify-content-between align-items-center rodape_area">
-        <img home src="img/logo.png" />
         <div navegacao="home/index.php">
             <i class="fa-solid fa-house" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
             <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Home</p>
