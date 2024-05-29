@@ -31,12 +31,13 @@
             <div class="col-12">
                 <div class="d-flex align-items-center flex-column w-100" >
                     <img src="img/logo.png" style="width:200px;" class="img-fluid" />
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="cpf" class="form-label">CPF</label>
                         <input type="text" inputmode="numeric" class="form-control form-control-lg" id="cpf" aria-describedby="cpf-mensagem">
                         <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
                         <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
-                    </div>
+                    </div> -->
+                    <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
                 </div>
             </div>
         </div>
