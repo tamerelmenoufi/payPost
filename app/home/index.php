@@ -30,23 +30,15 @@
         <div class="row g-0">
             <div class="col-12">
                 <div class="d-flex justify-content-center" >
-                    <div class="card">
-                        <img src="img/logo.png" class="card-img-top" />
-                        <div class="card-body">
-                            
-                        <form>
-                            <div class="mb-3">
-                                <label for="cpf" class="form-label">CPF</label>
-                                <input type="text" inputmode="numeric" class="form-control" id="cpf" aria-describedby="cpf-mensagem">
-                                <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
-                            </div>
-                            <button type="submit" class="btn btn-warning w-100">Acessar</button>
-                        </form>
-
-
-
+                    <img src="img/logo.png" class="img-fluid" />
+                    <form>
+                        <div class="mb-3">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" inputmode="numeric" class="form-control" id="cpf" aria-describedby="cpf-mensagem">
+                            <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
                         </div>
-                    </div>
+                        <button type="submit" class="btn btn-warning w-100">Acessar</button>
+                    </form>
                 </div>
             </div>
         </div>
