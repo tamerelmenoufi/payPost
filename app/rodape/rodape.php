@@ -24,7 +24,7 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         padding-right:20px;
         border-radius:10px;
         background-color:transparent;
-        border:solid 1px #b60710;
+        border:solid 0px #b60710;
         left:5px;
         right:5px;
         top:0;
@@ -91,34 +91,34 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
     <div class="d-flex justify-content-between align-items-center rodape_area">
 
         <div navegacao="home/index.php" class="telaPedido">
-            <i class="fa-solid fa-house" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Home</p>
+            <i class="fa-solid fa-house" <?=(($pdAtiva == 'home/index.php')?'style="color:#a1a1a1;"':false)?>></i>
+            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#a1a1a1;"':false)?>>Home</p>
         </div>
 
         <div navegacao="usuarios/perfil.php" class="telaPedido">
-            <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#ffdb37;"':false)?>>Perfil</p>
+            <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#a1a1a1;"':false)?>></i>
+            <p <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#a1a1a1;"':false)?>>Perfil</p>
         </div>
         
         <!-- <div navegacao="home/index.php" class="telaPedido">
-            <i class="fa-solid fa-burger" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Menu</p>
+            <i class="fa-solid fa-burger" <?=(($pdAtiva == 'home/index.php')?'style="color:#a1a1a1;"':false)?>></i>
+            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#a1a1a1;"':false)?>>Menu</p>
         </div> -->
         
         <div navegacao="pedido/resumo.php" class="telaPedido">
-            <i class="fa-solid fa-bag-shopping" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#ffdb37;"':false)?>>Pedido</p>
+            <i class="fa-solid fa-bag-shopping" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#a1a1a1;"':false)?>></i>
+            <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#a1a1a1;"':false)?>>Pedido</p>
             <span class="itens_produtos_add"><?=$qt_pedidos?></span>
         </div>        
 
         <div navegacao="pedido/pagar.php">
-            <i class="fa-solid fa-circle-dollar-to-slot" <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#ffdb37;"':false)?>>Pagar</p>
+            <i class="fa-solid fa-circle-dollar-to-slot" <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#a1a1a1;"':false)?>></i>
+            <p <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#a1a1a1;"':false)?>>Pagar</p>
         </div> 
         
         <div navegacao="contatos/index.php">
-            <i class="fa-solid fa-square-phone" <?=(($pdAtiva == 'contatos/index.php')?'style="color:#ffdb37;"':false)?>></i>
-            <p <?=(($pdAtiva == 'contatos/index.php')?'style="color:#ffdb37;"':false)?>>Contato</p>
+            <i class="fa-solid fa-square-phone" <?=(($pdAtiva == 'contatos/index.php')?'style="color:#a1a1a1;"':false)?>></i>
+            <p <?=(($pdAtiva == 'contatos/index.php')?'style="color:#a1a1a1;"':false)?>>Contato</p>
         </div>           
     </div>
 </div>
