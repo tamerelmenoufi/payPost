@@ -29,7 +29,7 @@
     <div class="m-1">
         <div class="row g-0">
             <div class="col">
-                <h1>Teste</h1>            
+                <img src="img/logo.png" class="img-fluid" />
             </div>
         </div>
     </div>
