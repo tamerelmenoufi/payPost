@@ -35,8 +35,8 @@
                         <label for="cpf" class="form-label">CPF</label>
                         <input type="text" inputmode="numeric" class="form-control form-control-lg" id="cpf" aria-describedby="cpf-mensagem">
                         <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
+                        <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
                     </div>
-                    <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
                 </div>
             </div>
         </div>
