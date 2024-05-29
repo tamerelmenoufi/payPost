@@ -26,7 +26,11 @@
 </style>
 
 <div class="home_corpo">
-    <h1>Teste</h1>
+    <div class="row g-0">
+        <div class="col">
+            <h1>Teste</h1>            
+        </div>
+    </div>
 </div>
 <div class="home_rodape"></div>
 
