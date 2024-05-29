@@ -31,14 +31,12 @@
             <div class="col-12">
                 <div class="d-flex align-items-center flex-column w-100" >
                     <img src="img/logo.png" style="width:200px;" class="img-fluid" />
-                    <form>
-                        <div class="mb-3">
-                            <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" inputmode="numeric" class="form-control form-control-lg" id="cpf" aria-describedby="cpf-mensagem">
-                            <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
-                        </div>
-                        <button type="submit" class="btn btn-warning btn-lg w-100">Acessar</button>
-                    </form>
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" inputmode="numeric" class="form-control form-control-lg" id="cpf" aria-describedby="cpf-mensagem">
+                        <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
                 </div>
             </div>
         </div>
@@ -58,6 +56,29 @@ $(function(){
             $(".home_rodape").html(dados);
         }
     });
+
+    $(".acessar").click(function(){
+        cpf = $("#cpf").val();
+        if(cpf && cpf.length() == 14){
+            $.alert('Informe um CPF válido!');
+            return;
+        }
+        Carregando();
+        idUnico = localStorage.getItem("idUnico");
+        codUsr = localStorage.getItem("codUsr");
+        $.ajax({
+            url:"usuarios/dados.php",
+            type:"POST",
+            data:{
+                cpf
+                historico:'.CorpoApp'
+            },
+            success:function(dados){
+                Carregando('none');
+                $(".CorpoApp").html(dados);
+            }
+        })
+    })
 
 
 })
