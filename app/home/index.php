@@ -30,7 +30,7 @@
         <div class="row g-0">
             <div class="col-12">
                 <div class="d-flex justify-content-center flex-column" >
-                    <img src="img/logo.png" class="img-fluid" />
+                    <img src="img/logo.png" style="width:200px;" class="img-fluid" />
                     <form>
                         <div class="mb-3">
                             <label for="cpf" class="form-label">CPF</label>
