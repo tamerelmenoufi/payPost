@@ -30,7 +30,7 @@
         <div class="row g-0">
             <div class="col-12">
                 <div class="d-flex justify-content-center" >
-                    <div class="card" style="width:70%">
+                    <div class="card">
                         <img src="img/logo.png" class="card-img-top" />
                         <div class="card-body">
                             
