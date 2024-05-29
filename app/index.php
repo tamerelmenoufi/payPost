@@ -23,7 +23,7 @@
     <link rel="icon" type="image/x-icon" href="img/icone.png">
     <title>BK - Manaus</title>
     <?php
-    include("../lib/header.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/lib/header.php");
     ?>
     <Style>
         body{
@@ -134,7 +134,7 @@
     </div>
 
     <?php
-    include("../lib/footer.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/lib/footer.php");
     ?>
 
     <script>
