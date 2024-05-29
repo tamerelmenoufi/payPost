@@ -18,9 +18,9 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
     }
     .rodape_area{
         position:absolute;
-        margin:0px;
         margin-top:15px;
         margin-bottom:10px;
+        padding-left:20px;
         padding-right:20px;
         border-radius:20px;
         background-color:#b60710;
@@ -87,6 +87,7 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
 <div class="rodape">
     <div class="bg_rodape"></div>
     <div class="d-flex justify-content-between align-items-center rodape_area">
+
         <div navegacao="home/index.php" class="telaPedido">
             <i class="fa-solid fa-house" <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>></i>
             <p <?=(($pdAtiva == 'home/index.php')?'style="color:#ffdb37;"':false)?>>Home</p>
