@@ -70,7 +70,7 @@ $(function(){
             url:"usuarios/dados.php",
             type:"POST",
             data:{
-                cpf
+                cpf,
                 historico:'.CorpoApp'
             },
             success:function(dados){
