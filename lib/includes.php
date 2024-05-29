@@ -1,23 +1,16 @@
 <?php
     session_start();
     include("/inc/connect.php");
-    include "confBk.php";
     include("fn.php");
-    include("wappBk.php");
-    include "vendor/rede/classes.php";
-    include "vendor/mercado_pago/classes.php";
-    include "vendor/mottu/classes.php";
-    $con = AppConnect('bk_manaus');
+    $con = AppConnect('app');
     $conApi = AppConnect('information_schema');
     $md5 = md5(date("YmdHis"));
 
-    $urlPainel = 'https://painel.bkmanaus.com.br/';
-    $urlApp = 'https://painel.bkmanaus.com.br/app/';
-    $urlEntregador = 'https://painel.bkmanaus.com.br/delivery/';
-    $urlLoja = 'https://painel.bkmanaus.com.br/loja/';
+    $urlPainel = 'https://paypostpainel.mohatron.com/';
+    $urlApp = 'https://paypost.mohatron.com/';
 
     if($_POST['historico']){
-        $pagina = str_replace("/painel/app/", false, $_SERVER["PHP_SELF"]);
+        $pagina = str_replace("/app/", false, $_SERVER["PHP_SELF"]);
         $destino = $_POST['historico'];
         $i = ((count($_SESSION['historico']))?(count($_SESSION['historico']) -1):0);
         if($_SESSION['historico'][$i]['local'] != $pagina){
@@ -29,9 +22,4 @@
         }else{
             unset($_POST['historico']);
         }
-    }
-
-    if($app){
-        $query = "insert into app_acessos set device = '{$_SESSION['idUnico']}', cliente = '{$_SESSION['codUsr']}', local = '{$_SERVER['PHP_SELF']}', data = NOW()";
-        mysqli_query($con, $query);
     }
