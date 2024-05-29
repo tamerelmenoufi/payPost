@@ -58,6 +58,8 @@
 
 $(function(){
 
+    $("#cpf").masck("999.999.999-99");
+
     $.ajax({
         url:"rodape/rodape.php",
         success:function(dados){
