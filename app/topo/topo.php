@@ -44,9 +44,20 @@ $c = mysqli_fetch_object($result);
         text-align:center;
     }
 
-    
+    .bg_topo{
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            height:45px;
+            background-position: center bottom;
+            background-size:cover;
+            background-image:url("img/bg_topo.png");
+            z-index:-1;
+        }
 </style>
 <div class="topo">
+      <div class="bg_topo"></div>
     <p class="dados">
         <?php
         if($c->nome){

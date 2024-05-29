@@ -72,8 +72,20 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         right:0px;
         display:<?=(($qt_pedidos)?'block':'none')?>;
     }
+    .bg_rodape{
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        height:45px;
+        background-position: center top;
+        background-size:cover;
+        background-image:url("img/bg_topo.png");
+        z-index:-1;
+    }    
 </style>
 <div class="rodape">
+    <div class="bg_rodape"></div>
     <div class="d-flex justify-content-between align-items-center rodape_area">
         <img home src="img/logo.png" />
         <div navegacao="home/index.php">
