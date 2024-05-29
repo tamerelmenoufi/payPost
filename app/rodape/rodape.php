@@ -20,14 +20,18 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         position:absolute;
         margin-top:15px;
         margin-bottom:10px;
+        margin-left:20px;
+        margin-right:20px;
         padding-left:20px;
         padding-right:20px;
+        padding-top:20px;
+        padding-bottom:20px;
+        
         border-radius:10px;
         background-color:#c65e00;
         border:solid 0px #b60710;
         left:5px;
         right:5px;
-        /* top:0; */
         bottom:80px;
         z-index:10;
     }
