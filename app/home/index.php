@@ -57,6 +57,16 @@ $(function(){
         }
     });
 
+
+    $.ajax({
+        url:"usuarios/principal.php",
+        success:function(dados){
+            $(".home_corpo").html(dados);
+        }
+    });
+
+
+
     $(".acessar").click(function(){
         cpf = $("#cpf").val();
         console.log(cpf)
