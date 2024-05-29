@@ -29,7 +29,14 @@
     <div class="m-1">
         <div class="row g-0">
             <div class="col">
-                <img src="img/logo.png" class="img-fluid" />
+                <div class="d-flex justify-content-center  flex-column" >
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/logo.png" class="card-img-top" />
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
