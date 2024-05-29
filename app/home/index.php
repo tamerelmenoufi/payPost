@@ -25,7 +25,6 @@
     }
 </style>
 
-<div class="home_topo"></div>
 <div class="home_corpo">
     <h1>Teste</h1>
 </div>
@@ -34,14 +33,6 @@
 <script>
 
 $(function(){
-
-   
-    $.ajax({
-        url:"topo/topo.php",
-        success:function(dados){
-            $(".home_topo").html(dados);
-        }
-    });
 
     $.ajax({
         url:"rodape/rodape.php",
