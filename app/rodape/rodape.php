@@ -23,12 +23,12 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         padding-left:20px;
         padding-right:20px;
         border-radius:10px;
-        background-color:transparent;
+        background-color:#c65e00;
         border:solid 0px #b60710;
         left:5px;
         right:5px;
         top:0;
-        bottom:5px;
+        bottom:80px;
         z-index:10;
     }
     .rodape_area img{
