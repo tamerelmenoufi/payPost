@@ -93,7 +93,7 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
         curl_setopt($ch, CURLOPT_POST, 1);
         $post = array(
-            'numeros' => ["{$numero}"],
+            'numeros' => array($numero),
             'mensagem' => $mensagem,
             'instancia' => 2,
             'tipo' => false, //img, arq
