@@ -80,7 +80,7 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         bottom:0;
         height:90px;
         background-position: center top;
-        background-size:cover;
+        background-size:contain;
         background-image:url("img/bg_topo.png");
         z-index:-1;
     }    
