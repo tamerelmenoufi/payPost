@@ -29,7 +29,7 @@
     <div class="m-3">
         <div class="row g-0">
             <div class="col-12">
-                <div class="d-flex justify-content-center" >
+                <div class="d-flex justify-content-center flex-column" >
                     <img src="img/logo.png" class="img-fluid" />
                     <form>
                         <div class="mb-3">
