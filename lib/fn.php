@@ -82,50 +82,32 @@
     
     }
 
+    function EnviarWapp($numero, $mensagem){
 
-    function CalculaValorCombo($cod){
-        global $con;
-        $query = "SELECT produtos->'$[*].produto' as codigos, produtos->'$[*].quantidade' as quantidades FROM `produtos` where codigo = '{$cod}'";
-        $result = mysqli_query($con, $query);
-        $d = mysqli_fetch_object($result);
-        $cods = json_decode($d->codigos);
-        $qtds = json_decode($d->quantidades);
-        $total = 0;
-        if($cods){
-          foreach($cods as $i => $v){
-            $t = mysqli_fetch_object(mysqli_query($con, "select (valor_combo*{$qtds[$i]}) as total from produtos where codigo = '{$v}'"));
-            $total = ($total + $t->total);
-          }
-          mysqli_query($con, "update produtos set valor = '{$total}' where codigo = '{$d->codigo}'");
-        }
-        return $total;
-    }
+        $numero = str_replace([' ','-','(',')'], false, $numero);
 
-    function ConsultaCEP($cep){
-        global $con;
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://viacep.com.br/ws/{$cep}/json/");
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        "accept: application/json",
-        "Content-Type: application/json",
-        ));
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $d);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
+
+        curl_setopt($ch, CURLOPT_URL, 'http://wapp.mohatron.com/tme.php');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $post = array(
+            'numeros' => [$numero],
+            'mensagem' => $mensagem,
+            'instancia' => 2,
+            'tipo' => false, //img, arq
+            'arquivo' => false //URL ou Bse64    
+        );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            // echo 'Error:' . curl_error($ch);
+        }
         curl_close($ch);
 
-        return $dados = json_decode($response);
-        
+
     }
 
-    function SituacaoPIX($e){
-        $opc = [
-            'approved' => 'pago',
-            'pending' => 'pendente',
-            'cancelled' => 'cancelado'
-        ];
-        return (($opc[$e])?:$e);
-    }
+
