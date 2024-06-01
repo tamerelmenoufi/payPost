@@ -50,12 +50,31 @@ $(function(){
     });
 
     $(".acessar").click(function(){
-        $.ajax({
-            url:"usuarios/principal.php",
-            success:function(dados){
-                $(".home_corpo").html(dados);
-            }
-        });
+
+
+        idUnico = localStorage.getItem("idUnico");
+        codUsr = localStorage.getItem("codUsr");
+
+        if(codUsr*1 > 0){
+            $.ajax({
+                url:"usuarios/dados.php",
+                type:"POST",
+                data:{
+                    idUnico,
+                    codUsr
+                },
+                success:function(dados){
+                    $(".home_corpo").html(dados);
+                }
+            });
+        }else{
+            $.ajax({
+                url:"usuarios/principal.php",
+                success:function(dados){
+                    $(".home_corpo").html(dados);
+                }
+            });            
+        }
     })
 
 
