@@ -1,10 +1,6 @@
 <?php
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
-
-    if($_POST['idUnico']){
-        mysqli_query($con, "insert into vendas_tmp set id_unico = '{$_POST['idUnico']}', cliente='{$_POST['codUsr']}', detalhes='{}'");
-    }
 ?>
 <style>
     .home_corpo{
@@ -31,12 +27,7 @@
             <div class="col-12">
                 <div class="d-flex align-items-center flex-column w-100" >
                     <img src="img/logo.png" style="width:200px;" class="img-fluid" />
-                    <!-- <div class="mb-3">
-                        <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" inputmode="numeric" class="form-control form-control-lg" id="cpf" aria-describedby="cpf-mensagem">
-                        <div id="cpf-mensagem" class="form-text">Digite seu CPF para iniciar a sessão.</div>
-                        <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
-                    </div> -->
+
                     <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
                 </div>
             </div>
@@ -58,39 +49,13 @@ $(function(){
         }
     });
 
-
-    $.ajax({
-        url:"usuarios/principal.php",
-        success:function(dados){
-            $(".home_corpo").html(dados);
-        }
-    });
-
-
-
     $(".acessar").click(function(){
-        cpf = $("#cpf").val();
-        console.log(cpf)
-        console.log(cpf.length)
-        if(!cpf || cpf.length != 14){
-            $.alert('Informe um CPF válido!');
-            return;
-        }
-        Carregando();
-        idUnico = localStorage.getItem("idUnico");
-        codUsr = localStorage.getItem("codUsr");
         $.ajax({
-            url:"usuarios/dados.php",
-            type:"POST",
-            data:{
-                cpf,
-                historico:'.CorpoApp'
-            },
+            url:"usuarios/principal.php",
             success:function(dados){
-                Carregando('none');
-                $(".CorpoApp").html(dados);
+                $(".home_corpo").html(dados);
             }
-        })
+        });
     })
 
 
