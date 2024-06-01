@@ -36,7 +36,6 @@
                 mysqli_query($con, "INSERT INTO clientes set telefone = '{$_POST['telefone']}'");
                 $_SESSION['codUsr'] = mysqli_insert_id($con);
             }
-            mysqli_query($con, "update vendas_tmp set cliente = '{$_SESSION['codUsr']}' where id_unico = '{$_SESSION['idUnico']}'");
         }
     }
 
@@ -83,11 +82,15 @@
         localStorage.setItem("codUsr", '<?=$_SESSION['codUsr']?>');
 
         ExecutaAtualizacao = (campo, valor)=>{
+            idUnico = localStorage.getItem("idUnico");
+            codUsr = localStorage.getItem("codUsr");
             $.ajax({
                 url:"usuarios/dados.php",
                 type:"POST",
                 dataType:"JSON",
                 data:{
+                    idUnico,
+                    codUsr,
                     campo,
                     valor,
                     codigo:'<?=$d->codigo?>',
@@ -126,21 +129,6 @@
             }
         })
 
-
-        idUnico = localStorage.getItem("idUnico");
-        codUsr = localStorage.getItem("codUsr");
-
-        $.ajax({
-            url:"enderecos/lista_enderecos.php",
-            type:"POST",
-            data:{
-                codUsr,
-                idUnico
-            },
-            success:function(dados){
-                $(".dados_enderecos").html(dados);
-            }
-        })  
 
     })
 </script>
