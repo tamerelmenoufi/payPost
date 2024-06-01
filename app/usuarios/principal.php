@@ -123,7 +123,7 @@ $(function(){
                                                         columnClass:'col-12',
                                                     });
                                                 }else{
-                                                    $(".dados_pessoais").html(dados);
+                                                    $(".home_corpo").html(dados);
                                                 }
                                             }
                                         });
