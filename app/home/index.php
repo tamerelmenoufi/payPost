@@ -1,6 +1,23 @@
 <?php
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
+
+
+    if($_POST['idUnico']){
+        $_SESSION['idUnico'] = $_POST['idUnico'];
+    }
+
+    if($_POST['codUsr']){
+        $_SESSION['codUsr'] = $_POST['codUsr'];
+    }
+
+
+    if($_SESSION['codUsr']){
+        $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+    }
+
 ?>
 <style>
     .home_corpo{
@@ -28,7 +45,18 @@
                 <div class="d-flex align-items-center flex-column w-100" >
                     <img src="img/logo.png" style="width:200px;" class="img-fluid" />
 
+                    <?php
+                    if($d->codigo){
+                    ?>
+                    <div>Olá <?=$d->nome?></div>
+                    <button type="button" class="btn btn-danger btn-lg w-100 sair">Sair</button>
+                    <?php
+                    }else{
+                    ?>
                     <button type="button" class="btn btn-warning btn-lg w-100 acessar">Acessar</button>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -75,6 +103,25 @@ $(function(){
                 }
             });            
         }
+    })
+
+    $(".sair").click(function(){
+
+        $.confirm({
+            title:"Sair do Sistema",
+            content: "Deseja realmente sair do sistema?",
+            type:'red',
+            buttons:{
+                'Sim':function(){
+                    localStorage.removeItem("codUsr");
+                    window.location.href='./?s=1';
+                },
+                'Não':function(){
+
+                }
+            }
+        })
+
     })
 
 
