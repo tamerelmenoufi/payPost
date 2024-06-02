@@ -5,7 +5,7 @@
     $con = AppConnect('app');
     $conApi = AppConnect('information_schema');
     $md5 = md5(date("YmdHis"));
-    $_SESSION = [];
+    // $_SESSION = [];
 
     $urlPainel = 'https://paypostpainel.mohatron.com/';
     $urlApp = 'https://paypost.mohatron.com/';
