@@ -49,7 +49,7 @@
                     if($d->codigo){
                     ?>
                     <div>Olá <?=$d->nome?></div>
-                    <button type="button" class="btn btn-danger btn-lg w-100 sair">Sair</button>
+                    <button type="button" class="btn btn-danger btn-lg mt-3 sair">Sair</button>
                     <?php
                     }else{
                     ?>
