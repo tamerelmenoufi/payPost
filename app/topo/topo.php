@@ -55,6 +55,9 @@ $c = mysqli_fetch_object($result);
             background-image:url("img/bg_topo.png");
             z-index:-1;
         }
+    .barra_topo h2{
+        z-index:2;
+    }
 </style>
 <div class="topo">
     <div class="bg_topo"></div>
