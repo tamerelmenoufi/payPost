@@ -56,7 +56,7 @@ $c = mysqli_fetch_object($result);
             z-index:-1;
         }
     .barra_topo h2{
-        z-index:2;
+        z-index:2!important;
     }
 </style>
 <div class="topo">
