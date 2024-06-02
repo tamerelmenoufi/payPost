@@ -9,7 +9,7 @@ if($_POST['codUsr']){
     $_SESSION['codUsr'] = $_POST['codUsr'];
 }
 
-$query = "select * from clientes a left join enderecos b on (a.codigo = b.cliente and padrao = '1') where a.codigo = '{$_SESSION['codUsr']}'";
+$query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
 $result = mysqli_query($con, $query);
 $c = mysqli_fetch_object($result);
 
@@ -57,14 +57,11 @@ $c = mysqli_fetch_object($result);
         }
 </style>
 <div class="topo">
-      <div class="bg_topo"></div>
+    <div class="bg_topo"></div>
     <p class="dados">
         <?php
         if($c->nome){
             echo $c->nome;
-        }
-        if($c->logradouro and $c->numero and $c->bairro){
-            echo "<br>{$c->logradouro}, {$c->numero}, {$c->bairro}";
         }
         ?>
     </p>
