@@ -124,6 +124,30 @@
 
         localStorage.setItem("codUsr", '<?=$_SESSION['codUsr']?>');
 
+
+        idUnico = localStorage.getItem("idUnico");
+        codUsr = localStorage.getItem("codUsr");
+
+        $.ajax({
+            url:"rodape/rodape.php",
+            success:function(dados){
+                $(".home_rodape").html(dados);
+            }
+        });
+
+        $.ajax({
+            url:"topo/topo.php",
+            type:"POST",
+            data:{
+                idUnico,
+                codUsr
+            },  
+            success:function(dados){
+                $(".barra_topo").append(dados);
+            }
+        });
+
+
         ExecutaAtualizacao = (campo, valor)=>{
             idUnico = localStorage.getItem("idUnico");
             codUsr = localStorage.getItem("codUsr");
