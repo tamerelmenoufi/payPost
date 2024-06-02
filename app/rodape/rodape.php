@@ -99,9 +99,9 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
             <p <?=(($pdAtiva == 'home/index.php')?'style="color:#5a0103;"':false)?>>Home</p>
         </div>
 
-        <div navegacao="usuarios/principal.php" class="telaPedido">
-            <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#5a0103;"':false)?>></i>
-            <p <?=(($pdAtiva == 'usuarios/perfil.php')?'style="color:#5a0103;"':false)?>>Perfil</p>
+        <div navegacao="usuarios/dados.php" class="telaPedido">
+            <i class="fa-solid fa-user" <?=(($pdAtiva == 'usuarios/dados.php')?'style="color:#5a0103;"':false)?>></i>
+            <p <?=(($pdAtiva == 'usuarios/dados.php')?'style="color:#5a0103;"':false)?>>Perfil</p>
         </div>
         
         <!-- <div navegacao="home/index.php" class="telaPedido">
