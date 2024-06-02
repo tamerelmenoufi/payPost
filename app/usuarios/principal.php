@@ -123,7 +123,7 @@ $(function(){
                                                         columnClass:'col-12',
                                                     });
                                                 }else{
-                                                    $(".home_corpo").html(dados);
+                                                    $(".CorpoApp").html(dados);
                                                 }
                                             }
                                         });
