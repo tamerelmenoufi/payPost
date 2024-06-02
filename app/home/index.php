@@ -51,7 +51,6 @@ $(function(){
 
     $(".acessar").click(function(){
 
-
         idUnico = localStorage.getItem("idUnico");
         codUsr = localStorage.getItem("codUsr");
 
@@ -61,10 +60,11 @@ $(function(){
                 type:"POST",
                 data:{
                     idUnico,
-                    codUsr
+                    codUsr,
+                    historico:'.CorpoApp'
                 },
                 success:function(dados){
-                    $(".home_corpo").html(dados);
+                    $(".CorpoApp").html(dados);
                 }
             });
         }else{
