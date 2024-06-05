@@ -128,7 +128,7 @@
         $(".registrar").click(function(){
 
             combustivel = $("#combustivel").val();
-            combustivel_nome = $(`option[value="${combustivel}"]`);
+            combustivel_nome = $(`option[value="${combustivel}"]`).text();
             quantidade = $("#quantidade").val();
             valor = $("#valor").val();
             cliente = $("#cliente").val();
