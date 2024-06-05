@@ -109,9 +109,9 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
             <p <?=(($pdAtiva == 'vendas/venda.php')?'style="color:#5a0103;"':false)?>>Venda</p>
         </div>        
 
-        <div navegacao="pedido/pagar.php">
-            <i class="fa-solid fa-circle-dollar-to-slot" <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#5a0103;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/pagar.php')?'style="color:#5a0103;"':false)?>>Pagar</p>
+        <div navegacao="vendas/lista.php">
+            <i class="fa-solid fa-circle-dollar-to-slot" <?=(($pdAtiva == 'vendas/lista.php')?'style="color:#5a0103;"':false)?>></i>
+            <p <?=(($pdAtiva == 'vendas/lista.php')?'style="color:#5a0103;"':false)?>>Lista</p>
         </div> 
         
         <div navegacao="contatos/index.php">
