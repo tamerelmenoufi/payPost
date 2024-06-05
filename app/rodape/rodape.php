@@ -104,15 +104,9 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
             <p <?=(($pdAtiva == 'usuarios/dados.php')?'style="color:#5a0103;"':false)?>>Perfil</p>
         </div>
         
-        <!-- <div navegacao="home/index.php" class="telaPedido">
-            <i class="fa-solid fa-burger" <?=(($pdAtiva == 'home/index.php')?'style="color:#5a0103;"':false)?>></i>
-            <p <?=(($pdAtiva == 'home/index.php')?'style="color:#5a0103;"':false)?>>Menu</p>
-        </div> -->
-        
-        <div navegacao="pedido/resumo.php" class="telaPedido">
-            <i class="fa-solid fa-bag-shopping" <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#5a0103;"':false)?>></i>
-            <p <?=(($pdAtiva == 'pedido/resumo.php')?'style="color:#5a0103;"':false)?>>Pedido</p>
-            <span class="itens_produtos_add"><?=$qt_pedidos?></span>
+        <div navegacao="vendas/venda.php" class="telaPedido">
+            <i class="fa-solid fa-bag-shopping" <?=(($pdAtiva == 'vendas/venda.php')?'style="color:#5a0103;"':false)?>></i>
+            <p <?=(($pdAtiva == 'vendas/venda.php')?'style="color:#5a0103;"':false)?>>Venda</p>
         </div>        
 
         <div navegacao="pedido/pagar.php">

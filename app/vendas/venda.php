@@ -1,0 +1,112 @@
+<?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
+
+
+?>
+<style>
+    .barra_topo{
+        position:absolute;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        top:0;
+        width:100%;
+        height:100px;
+        /* background-color:#ffc63a;
+        color:#670600;
+        border-bottom-right-radius:40px;
+        border-bottom-left-radius:40px;
+        font-family:FlameBold; */
+    }
+
+
+    .home_corpo{
+        position: absolute;
+        top:100px;
+        bottom:80px;
+        overflow:auto;
+        background-color:#fff;
+        width:100%;
+    }
+
+    .home_rodape{
+        position: absolute;
+        background-color:#fff;
+        width:100%;
+        bottom:0;
+        height:80px;
+    }
+
+
+</style>
+<div class="barra_topo">
+    <h2>Venda</h2>
+</div>
+
+<div class="home_corpo">
+    <div class="row g-0 p-2">
+        <div class="card p-2">
+            <h4 class="w-100 text-center">Registro da Venda</h4>
+            <div class="mb-1">
+                <label for="nome" class="form-label">Combustível</label>
+                <input type="text" class="form-control formDados" autocomplete="off" id="nome">
+                <select name="combustivel" id="combustivel">
+                    <?php
+                    $q = "select * from combustiveis where situacao = '1' order by combustivel asc";
+                    $r = mysqli_query($con, $q);
+                    while($s = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$s->codigo?>"><?=$s->combustivel?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="mb-1">
+                <label for="quantidade" class="form-label">Quantidade</label>
+                <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="quantidade">
+            </div>
+            <div class="mb-1">
+                <label for="valor" class="form-label">Valor</label>
+                <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="valor">
+            </div>
+            <div class="m-2">
+                <button type="button" class="btn btn-outline-danger w-100 registrar">Registrar</button>
+            </div>       
+        </div>
+    </div>
+</div>
+
+<div class="home_rodape"></div>
+
+<script>
+    $(function(){
+
+
+        idUnico = localStorage.getItem("idUnico");
+        codUsr = localStorage.getItem("codUsr");
+
+        $.ajax({
+            url:"rodape/rodape.php",
+            success:function(dados){
+                $(".home_rodape").html(dados);
+            }
+        });
+
+        $.ajax({
+            url:"topo/topo.php",
+            type:"POST",
+            data:{
+                idUnico,
+                codUsr
+            },  
+            success:function(dados){
+                $(".barra_topo").append(dados);
+            }
+        });
+
+
+
+    })
+</script>
