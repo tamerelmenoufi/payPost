@@ -128,6 +128,7 @@
         $(".registrar").click(function(){
 
             combustivel = $("#combustivel").val();
+            combustivel_nome = $(`option[value="${combustivel}"]`);
             quantidade = $("#quantidade").val();
             valor = $("#valor").val();
             cliente = $("#cliente").val();
@@ -146,7 +147,7 @@
             $.confirm({
                 title:"Confirmação da Venda",
                 content:`Sua venda está definida com os seguintes dados:
-                        <br>Combustível: <b>${combustivel}</b>
+                        <br>Combustível: <b>${combustivel_nome}</b>
                         <br>Litros: <b>${quantidade}</b>
                         <br>Valor: <b>${valor}</b>
                         <br>Cliente: <b>${cliente}</b>`,
