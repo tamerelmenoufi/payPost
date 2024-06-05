@@ -108,6 +108,43 @@
         });
 
 
+        $(".registrar").click(function(){
+
+            combustivel = $("#combustive").val();
+            quantidade = $("#quantidade").val();
+            valor = $("#valor").val();
+            cliente = $("#cliente").val();
+
+            if(!combustivel || !quantidade || !valor){
+                $.alert({
+                    title:"Erro",
+                    content:"Preencha os campos obrigatórios!",
+                    type:"red"
+                });
+                return false;
+            }
+
+            $.confirm({
+                title:"Confirmação da Venda",
+                content:`Sua venda está definida com os seguintes dados:
+                        <br>Combustível: <b>${combustivel}</b>
+                        <br>Litros: <b>${quantidade}</b>
+                        <br>Valor: <b>${valor}</b>
+                        <br>Cliente: <b>${cliente}</b>`,
+                type:"blue",
+                buttons:{
+                    'Sim':function(){
+
+                    },
+                    'Não':function(){
+                        
+                    }
+                }
+            })
+
+        })
+
+
 
     })
 
