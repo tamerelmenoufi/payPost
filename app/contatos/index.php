@@ -12,18 +12,15 @@
         top:0;
         width:100%;
         height:100px;
-        background-color:#0f34d3;
-        color:#f9de37;
-        border-bottom-right-radius:40px;
-        border-bottom-left-radius:40px;
+        color:#333;
         font-family:FlameBold;
     }
     .topo > .voltar{
-        color:#f9de37!important;
+        color:#333!important;
     }
 
     .topo > .dados{
-        color:#fff!important;
+        color:#333!important;
     }
 
 
@@ -69,22 +66,17 @@
         </div>
         <div class="row mb-1">
             <div class="col">
-                <i class="fa-brands fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=5592986123301" target="_blank">+55 92 986123301</a>
+                <i class="fa-brands fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=5592991886570" target="_blank">+55 92 991886570</a>
             </div>
         </div>
         <div class="row mb-1">
             <div class="col">
-                <i class="fa-solid fa-at"></i> <a href="mailto:atendimento@bkmanaus.com.br" target="_blank">atendimento@bkmanaus.com.br</a>
+                <i class="fa-solid fa-at"></i> <a href="mailto:atendimento@mohatron.com.br" target="_blank">atendimento@mohatron.com.br</a>
             </div>
         </div>
         <div class="row mb-1">
             <div class="col">
-                <i class="fa-solid fa-house"></i> <a href="https://bkmanaus.com.br" target="_blank">https://bkmanaus.com.br</a>
-            </div>
-        </div>
-        <div class="row mb-1">
-            <div class="col">
-                <span style="color:#a1a1a1">Aplicativo atende pedidos todos os dias das 11h às 23h.</span>
+                <i class="fa-solid fa-house"></i> <a href="https://www.mohatron.com.br" target="_blank">https://mohatron.com.br</a>
             </div>
         </div>
     </div>
