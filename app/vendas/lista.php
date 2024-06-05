@@ -122,6 +122,22 @@
             }
         });
 
+        setTimeout(() => {
+            idUnico = localStorage.getItem("idUnico");
+            codUsr = localStorage.getItem("codUsr");
+            $.ajax({
+                url:"vendas/lista.php",
+                type:"POST",
+                data:{
+                    idUnico,
+                    codUsr
+                },
+                success:function(dados){
+                    $(".CorpoApp").html(dados);
+                }
+            })
+        }, 10000);
+
 
 
     })
