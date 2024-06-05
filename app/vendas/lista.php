@@ -74,7 +74,7 @@
             <?php
             while($d = mysqli_fetch_object($result)){
             ?>
-                <li class="list-group-item">
+                <li class="list-group-item list-group-item-success">
                     <div class="d-flex justify-content-between align-items-center">
                         <span><i class="fa-solid fa-gas-pump"></i> <?=$d->combustivel?></span>
                         <span>R$ <?=number_format($d->valor,2,",",false)?></span>
