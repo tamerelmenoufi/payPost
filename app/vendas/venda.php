@@ -52,7 +52,7 @@
                 <label for="nome" class="form-label">Combustível</label>
                 <select name="combustivel" id="combustivel" class="form-select">
                     <?php
-                    $q = "select * from combustiveis where situacao = '1' order by combustivel asc";
+                    $q = "select * from combustiveis where situacao = '1' order by ordem asc";
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
                     ?>
