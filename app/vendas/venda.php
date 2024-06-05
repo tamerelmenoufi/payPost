@@ -89,20 +89,20 @@
         codUsr = localStorage.getItem("codUsr");
 
         $("#quantidade").maskMoney({
-                                    prefix:false,
+                                    prefix:'',
                                     allowNegative: false,
                                     thousands:'', 
                                     decimal:',', 
-                                    affixesStay: false,
+                                    affixesStay: '',
                                     precision:3
                                 });
 
         $("#quantidade").maskMoney({
-                                    prefix:false,
+                                    prefix:'',
                                     allowNegative: false,
                                     thousands:'', 
                                     decimal:',', 
-                                    affixesStay: false
+                                    affixesStay: ''
                                 });
 
         $.ajax({
