@@ -64,11 +64,11 @@
             </div>
             <div class="mb-1">
                 <label for="quantidade" class="form-label">Quantidade</label>
-                <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="quantidade">
+                <input type="text" inputmode="numeric" placeholder="0,000" oninput="formatarNumero(this)" class="form-control formDados" autocomplete="off" id="quantidade">
             </div>
             <div class="mb-1">
                 <label for="valor" class="form-label">Valor</label>
-                <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="valor">
+                <input type="text" inputmode="numeric" placeholder="0,000" oninput="formatarNumero(this)" class="form-control formDados" autocomplete="off" id="valor">
             </div>
             <div class="mb-2">
                 <label for="cliente" class="form-label">Cliente</label>
@@ -110,4 +110,20 @@
 
 
     })
+
+
+    function formatarNumero(campo) {
+        let valor = campo.value.replace(/[^\d,]/g, ''); // Remove caracteres não numéricos exceto a vírgula
+        valor = valor.replace(/,/g, '.'); // Substitui a vírgula por ponto para manipulação numérica
+        if (valor) {
+            let partes = valor.split('.');
+            if (partes[1] && partes[1].length > 3) {
+                partes[1] = partes[1].substring(0, 3); // Limita as casas decimais a 3
+            }
+            valor = partes.join('.');
+            valor = Number(valor).toFixed(3); // Converte para número e fixa 3 casas decimais
+            campo.value = valor.replace('.', ','); // Substitui ponto por vírgula para formato PT-BR
+        }
+    }
+
 </script>
