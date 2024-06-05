@@ -35,7 +35,7 @@
                 idUnico = localStorage.getItem("idUnico");
                 codUsr = localStorage.getItem("codUsr");
                 $.ajax({
-                    url:"vendas/lista.php",
+                    url:"vendas/lista_venda.php",
                     type:"POST",
                     data:{
                         idUnico,
