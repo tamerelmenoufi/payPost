@@ -127,10 +127,12 @@
 
         $(".registrar").click(function(){
 
-            combustivel = $("#combustive").val();
+            combustivel = $("#combustivel").val();
             quantidade = $("#quantidade").val();
             valor = $("#valor").val();
             cliente = $("#cliente").val();
+
+
 
             if(!combustivel || !quantidade || !valor){
                 $.alert({
@@ -154,7 +156,7 @@
 
                     },
                     'Não':function(){
-                        
+
                     }
                 }
             })
