@@ -142,11 +142,11 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
         });
 
         $("div[navegacao]").click(function(){
-            Carregando();
             url = $(this).attr("navegacao");
             idUnico = localStorage.getItem("idUnico");
             codUsr = localStorage.getItem("codUsr");
             if(!codUsr) return false;
+            Carregando();
             $.ajax({
                 url,
                 type:"POST",
