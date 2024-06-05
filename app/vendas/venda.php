@@ -134,7 +134,6 @@
             cliente = $("#cliente").val();
 
 
-
             if(!combustivel || !quantidade || !valor){
                 $.alert({
                     title:"Erro",
@@ -154,7 +153,27 @@
                 type:"blue",
                 buttons:{
                     'Sim':function(){
+                        Carregando()
 
+                        idUnico = localStorage.getItem("idUnico");
+                        codUsr = localStorage.getItem("codUsr");
+
+                        $.ajax({
+                            url:"vendas/lista.php",
+                            type:"POST",
+                            data:{
+                                idUnico,
+                                codUsr,
+                                acao:"venda",
+                                combustivel,
+                                quantidade,
+                                valor,
+                                cliente
+                            },  
+                            success:function(dados){
+                                $(".CorpoApp").html(dados);
+                            }
+                        });
                     },
                     'Não':function(){
 

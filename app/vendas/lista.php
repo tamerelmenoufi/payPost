@@ -1,6 +1,28 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
+    if($_POST['acao'] == 'venda'){
+
+
+        $query = "insert into vendas set 
+                                        usuario = '{$_SESSION['codUsr']}',
+                                        combustivel = '{$_POST['combustivel']}',
+                                        quantidade = '".str_replace(",", ".", $_POST['quantidade'])."',
+                                        valor  = '".str_replace(",", ".", $_POST['valor'])."',
+                                        cliente = '{$_POST['cliente']}',
+                                        data = NOW(),
+                                        pago = '0'
+        
+        ";
+
+        mysqli_query($con, $query);
+
+    }
+
+    $query = "select * from vendas where usuario = '{$_SESSION['codUsr']}' order by data desc limit 50";
+    $result = mysqli_query($con, $query);
+
+
 
 ?>
 <style>
@@ -49,7 +71,13 @@
         <div class="card p-2">
             <h4 class="w-100 text-center">Vendas Realizadas</h4>
             
-            Lista de todas as vendas
+            <?php
+            while($d = mysqli_fetch_object($result)){
+            ?>
+            <?=$d->codigo?><br>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>
