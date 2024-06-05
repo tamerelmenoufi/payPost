@@ -88,6 +88,23 @@
         idUnico = localStorage.getItem("idUnico");
         codUsr = localStorage.getItem("codUsr");
 
+        $("#quantidade").maskMoney({
+                                    prefix:false,
+                                    allowNegative: false,
+                                    thousands:false, 
+                                    decimal:',', 
+                                    affixesStay: false,
+                                    precision:3
+                                });
+
+        $("#quantidade").maskMoney({
+                                    prefix:false,
+                                    allowNegative: false,
+                                    thousands:false, 
+                                    decimal:',', 
+                                    affixesStay: false
+                                });
+
         $.ajax({
             url:"rodape/rodape.php",
             success:function(dados){
