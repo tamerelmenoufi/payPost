@@ -50,8 +50,7 @@
             <h4 class="w-100 text-center">Registro da Venda</h4>
             <div class="mb-1">
                 <label for="nome" class="form-label">Combustível</label>
-                <input type="text" class="form-control formDados" autocomplete="off" id="nome">
-                <select name="combustivel" id="combustivel">
+                <select name="combustivel" id="combustivel" class="form-select">
                     <?php
                     $q = "select * from combustiveis where situacao = '1' order by combustivel asc";
                     $r = mysqli_query($con, $q);
