@@ -91,7 +91,7 @@
         $("#quantidade").maskMoney({
                                     prefix:false,
                                     allowNegative: false,
-                                    thousands:false, 
+                                    thousands:'', 
                                     decimal:',', 
                                     affixesStay: false,
                                     precision:3
@@ -100,7 +100,7 @@
         $("#quantidade").maskMoney({
                                     prefix:false,
                                     allowNegative: false,
-                                    thousands:false, 
+                                    thousands:'', 
                                     decimal:',', 
                                     affixesStay: false
                                 });
