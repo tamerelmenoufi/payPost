@@ -97,7 +97,7 @@
                                     precision:3
                                 });
 
-        $("#quantidade").maskMoney({
+        $("#valor").maskMoney({
                                     prefix:'',
                                     allowNegative: false,
                                     thousands:'', 
