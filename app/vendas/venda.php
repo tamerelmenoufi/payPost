@@ -66,11 +66,15 @@
                 <label for="quantidade" class="form-label">Quantidade</label>
                 <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="quantidade">
             </div>
+            <div class="mb-1">
+                <label for="valor" class="form-label">Valor</label>
+                <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="valor">
+            </div>
             <div class="mb-2">
                 <label for="cliente" class="form-label">Cliente</label>
                 <input type="text" class="form-control formDados" autocomplete="off" id="cliente">
             </div>
-            <button type="button" class="btn btn-warning w-100 registrar">Registrar</button>
+            <button type="button" class="btn btn-warning w-100 registrar">Registrar</button>  
         </div>
     </div>
 </div>
