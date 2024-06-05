@@ -162,6 +162,7 @@
                             url:"vendas/lista.php",
                             type:"POST",
                             data:{
+                                historico:'.CorpoApp',
                                 idUnico,
                                 codUsr,
                                 acao:"venda",
