@@ -26,3 +26,5 @@
 <script src="<?=$urlPainel?>lib/vendor/slick/slick.js" ></script>
 
 
+
+<script src="<?=$urlPainel?>lib/vendor/slick/jquery-maskmoney/jquery.maskMoney.js" ></script>
