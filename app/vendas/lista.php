@@ -79,7 +79,7 @@
                         <span><i class="fa-solid fa-gas-pump"></i> <?=$d->combustivel?></span>
                         <span>R$ <?=number_format($d->valor,2,",",false)?></span>
                     </div>
-                    <i class="fa-solid fa-user"></i> <?=$d->cliente?>
+                    <i class="fa-solid fa-user"></i> <?=(($d->cliente)?:'Não Identificado')?>
                     <div class="d-flex justify-content-end align-items-center">
                         <span style="font-size:10px;"><?=dataBr($d->data)?></span>
                     </div>                    
