@@ -70,14 +70,24 @@
     <div class="row g-0 p-2">
         <div class="card p-2">
             <h4 class="w-100 text-center">Vendas Realizadas</h4>
-            
+            <ul class="list-group">
             <?php
             while($d = mysqli_fetch_object($result)){
             ?>
-            <?=$d->codigo?><br>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span><i class="fa-solid fa-gas-pump"></i> <?=$d->combustile?></span>
+                        <span>R$ <?=number_format($d->valor,2,",",false)?></span>
+                    </div>
+                    <?=$d->cliente?>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <span class="color:#a1a1a1; font-size:10px;">R$ <?=dataBr($d->data)?></span>
+                    </div>                    
+                </li>
             <?php
             }
             ?>
+            </ul>
         </div>
     </div>
 </div>
