@@ -7,7 +7,7 @@
     $_POST = json_decode(file_get_contents('php://input'), true);
 
     if($_POST['acao'] == 'ativar'){
-        $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
+        $query = "select * from usuarios where telefone = '{$_POST['telefone']}'";
         $result = mysqli_query($con, $query);
         $c = mysqli_fetch_object($result);
 
@@ -69,7 +69,7 @@
             $c['enderecos'][] = $d1;
     }
 
-    $query = "select * from clientes where codigo = '{$d->cliente}'";
+    $query = "select * from usuarios where codigo = '{$d->cliente}'";
     $result = mysqli_query($con, $query);
     $d2 = mysqli_fetch_object($result);
     if($d2->codigo){

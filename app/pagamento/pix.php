@@ -36,7 +36,7 @@
                         c.localidade as Elocalidade,
                         c.uf as Euf
                     from vendas_tmp a 
-                    left join clientes b on a.cliente = b.codigo
+                    left join usuarios b on a.cliente = b.codigo
                     left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')
                     where a.id_unico = '{$_SESSION['idUnico']}'";
 
@@ -87,7 +87,7 @@
                                                         c.uf as Euf,
                                                         d.telefone as Ltelefone
                                                     from vendas a 
-                                                    left join clientes b on a.cliente = b.codigo
+                                                    left join usuarios b on a.cliente = b.codigo
                                                     left join lojas d on a.loja = d.codigo
                                                     left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')
                                                     where a.codigo = '{$_SESSION['codVenda']}'"));

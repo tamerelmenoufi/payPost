@@ -98,7 +98,7 @@
                             c.localidade as Elocalidade,
                             c.uf as Euf
                     from vendas a 
-                    left join clientes b on a.cliente = b.codigo 
+                    left join usuarios b on a.cliente = b.codigo 
                     left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')
                     where /*a.delivery_id = '{$l->mottu}' and*/ a.situacao = 'pago' and loja = '{$_SESSION['DbkLoja']}' and delivery_detalhes->>'$.deliveryMan.id' = '{$_SESSION['DbkEntregador']}' order by ordem asc, a.data desc";
             $result = mysqli_query($con, $query);

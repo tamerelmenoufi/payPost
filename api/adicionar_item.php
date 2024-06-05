@@ -75,7 +75,7 @@
             $c['enderecos'][] = $d1;
     }
 
-    $query = "select * from clientes where codigo = '{$d->cliente}'";
+    $query = "select * from usuarios where codigo = '{$d->cliente}'";
     $result = mysqli_query($con, $query);
     $d2 = mysqli_fetch_object($result);
     if($d2->codigo){

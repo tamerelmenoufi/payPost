@@ -10,7 +10,7 @@
         $where = " where codigo = '{$_SESSION['codUsr']}'";
     }
 
-    $query = "select * from clientes where codigo = '{$_POST['codUsr']}'";
+    $query = "select * from usuarios where codigo = '{$_POST['codUsr']}'";
 
     $result = mysqli_query($con, $query);
 

@@ -20,7 +20,7 @@
                     d.telefone as Ltelefone
                 from vendas a
 
-                left join clientes b on a.cliente = b.codigo
+                left join usuarios b on a.cliente = b.codigo
                 left join lojas d on a.loja = d.codigo
                 left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')                
             where a.situacao = 'pendente'";

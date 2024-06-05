@@ -11,7 +11,7 @@
     }
 
     if($_POST['acao'] == 'atualizar'){
-        mysqli_query($con, "update clientes set {$_POST['campo']} = '".addslashes($_POST['valor'])."' where codigo = '{$_POST['codigo']}'");
+        mysqli_query($con, "update usuarios set {$_POST['campo']} = '".addslashes($_POST['valor'])."' where codigo = '{$_POST['codigo']}'");
         $retorno = [
             'status' => 'success',
             'idUnico' => $_SESSION['idUnico'],
@@ -28,18 +28,18 @@
             echo 'erro';
             exit();
         }else{
-            $q = "SELECT * from clientes WHERE telefone = '{$_POST['telefone']}'";
+            $q = "SELECT * from usuarios WHERE telefone = '{$_POST['telefone']}'";
             $c = mysqli_fetch_object(mysqli_query($con, $q));
             if($c->codigo){
                 $_SESSION['codUsr'] = $c->codigo;
             }else{
-                mysqli_query($con, "INSERT INTO clientes set telefone = '{$_POST['telefone']}'");
+                mysqli_query($con, "INSERT INTO usuarios set telefone = '{$_POST['telefone']}'");
                 $_SESSION['codUsr'] = mysqli_insert_id($con);
             }
         }
     }
 
-    $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
+    $query = "select * from usuarios where codigo = '{$_SESSION['codUsr']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 

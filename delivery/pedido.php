@@ -23,7 +23,7 @@
                 d.telefone as Ltelefone,
                 d.nome as Lnome
             from vendas a 
-            left join clientes b on a.cliente = b.codigo
+            left join usuarios b on a.cliente = b.codigo
             left join lojas d on a.loja = d.codigo
             left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')
             where a.codigo = '{$_SESSION['Dpedido']}'"));
@@ -86,7 +86,7 @@
                 d.telefone as Ltelefone,
                 d.nome as Lnome
             from vendas a 
-            left join clientes b on a.cliente = b.codigo
+            left join usuarios b on a.cliente = b.codigo
             left join lojas d on a.loja = d.codigo
             left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')
             where a.codigo = '{$_POST['pedido']}'"));
@@ -148,7 +148,7 @@
                         c.coordenadas,
                         a.delivery_detalhes->>'$.pickupCode' as entrega, 
                         a.delivery_detalhes->>'$.returnCode' as retorno 
-                    from vendas a left join clientes b on a.cliente = b.codigo left join enderecos c on (a.cliente = c.cliente and c.padrao = '1') where a.codigo = '{$_SESSION['Dpedido']}'";
+                    from vendas a left join usuarios b on a.cliente = b.codigo left join enderecos c on (a.cliente = c.cliente and c.padrao = '1') where a.codigo = '{$_SESSION['Dpedido']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 

@@ -16,7 +16,7 @@
             $c = explode("-", $_POST['reference']);
 
             //Se tiver pagamento pix pendente executar o script de cancelamento aqui 
-            $q = "select a.pix_detalhes->>'$.id' as operadora_id, b.telefone as Ctelefone, c.telefone as Ltelefone from vendas a left join clientes b on a.cliente = b.codigo left join lojas c on a.loja = c.codigo where a.codigo = '{$c[0]}'";
+            $q = "select a.pix_detalhes->>'$.id' as operadora_id, b.telefone as Ctelefone, c.telefone as Ltelefone from vendas a left join usuarios b on a.cliente = b.codigo left join lojas c on a.loja = c.codigo where a.codigo = '{$c[0]}'";
             $r = mysqli_query($con, $q);
             $v = mysqli_fetch_object($r);
             
@@ -93,7 +93,7 @@
                         c.localidade as Elocalidade,
                         c.uf as Euf
                     from vendas_tmp a 
-                    left join clientes b on a.cliente = b.codigo
+                    left join usuarios b on a.cliente = b.codigo
                     left join enderecos c on (a.cliente = c.cliente and c.padrao = '1')
                     where a.id_unico = '{$_SESSION['idUnico']}'";
 
