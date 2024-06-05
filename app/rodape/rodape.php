@@ -146,6 +146,7 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
             url = $(this).attr("navegacao");
             idUnico = localStorage.getItem("idUnico");
             codUsr = localStorage.getItem("codUsr");
+            if(!codUsr) return false;
             $.ajax({
                 url,
                 type:"POST",
