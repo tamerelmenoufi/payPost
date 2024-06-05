@@ -81,7 +81,7 @@
                     </div>
                     <?=$d->cliente?>
                     <div class="d-flex justify-content-end align-items-center">
-                        <span class="color:#a1a1a1; font-size:10px;">R$ <?=dataBr($d->data)?></span>
+                        <span style="color:#a1a1a1; font-size:10px;">R$ <?=dataBr($d->data)?></span>
                     </div>                    
                 </li>
             <?php
