@@ -113,17 +113,21 @@
 
 
     function formatarNumero(campo) {
-        let valor = campo.value.replace(/[^\d,]/g, ''); // Remove caracteres não numéricos exceto a vírgula
-        valor = valor.replace(/,/g, '.'); // Substitui a vírgula por ponto para manipulação numérica
-        if (valor) {
-            let partes = valor.split('.');
-            if (partes[1] && partes[1].length > 3) {
-                partes[1] = partes[1].substring(0, 3); // Limita as casas decimais a 3
+            let valor = campo.value.replace(/[^\d,]/g, ''); // Remove caracteres não numéricos exceto a vírgula
+            valor = valor.replace(/,/g, '.'); // Substitui a vírgula por ponto para manipulação numérica
+            if (valor) {
+                let partes = valor.split('.');
+                if (partes.length > 2) {
+                    valor = partes[0] + '.' + partes.slice(1).join(''); // Corrige múltiplos pontos
+                    partes = valor.split('.');
+                }
+                if (partes[1] && partes[1].length > 3) {
+                    partes[1] = partes[1].substring(0, 3); // Limita as casas decimais a 3
+                }
+                valor = partes.join('.');
+                valor = Number(valor).toFixed(3); // Converte para número e fixa 3 casas decimais
+                campo.value = valor.replace('.', ','); // Substitui ponto por vírgula para formato PT-BR
             }
-            valor = partes.join('.');
-            valor = Number(valor).toFixed(3); // Converte para número e fixa 3 casas decimais
-            campo.value = valor.replace('.', ','); // Substitui ponto por vírgula para formato PT-BR
         }
-    }
 
 </script>
