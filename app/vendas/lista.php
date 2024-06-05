@@ -46,7 +46,7 @@
     .home_corpo{
         position: absolute;
         top:100px;
-        bottom:80px;
+        bottom:180px;
         overflow:auto;
         background-color:#fff;
         width:100%;
