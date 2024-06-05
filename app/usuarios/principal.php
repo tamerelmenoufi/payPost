@@ -111,7 +111,8 @@ $(function(){
                                             type:"POST",
                                             data:{
                                                 telefone,
-                                                idUnico
+                                                idUnico,
+                                                historico:'.CorpoApp'
                                             },
                                             success:function(dados){
                                                 Carregando('none');
