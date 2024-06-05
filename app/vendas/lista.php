@@ -19,7 +19,7 @@
 
     }
 
-    $query = "select * from vendas where usuario = '{$_SESSION['codUsr']}' order by data desc limit 50";
+    $query = "select a.*, b.combustivel from vendas a left join combustiveis b on a.combustivel = b.codigo where a.usuario = '{$_SESSION['codUsr']}' order by a.data desc limit 50";
     $result = mysqli_query($con, $query);
 
 
@@ -76,7 +76,7 @@
             ?>
                 <li class="list-group-item">
                     <div class="d-flex justify-content-between align-items-center">
-                        <span><i class="fa-solid fa-gas-pump"></i> <?=$d->combustile?></span>
+                        <span><i class="fa-solid fa-gas-pump"></i> <?=$d->combustivel?></span>
                         <span>R$ <?=number_format($d->valor,2,",",false)?></span>
                     </div>
                     <i class="fa-solid fa-user"></i> <?=$d->cliente?>
