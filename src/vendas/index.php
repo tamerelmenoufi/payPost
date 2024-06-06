@@ -79,8 +79,8 @@
                     <td><?=dataBr($d->data)?></td>
                     <td><?=$d->usuario_nome?></td>
                     <td><?=$d->combustivel?></td>
-                    <td><?=$d->quantidade?></td>
-                    <td><?=$d->valor?></td>
+                    <td><?=number_format($d->quantidade,2,',',false)?></td>
+                    <td><?=number_format($d->valor,2,',',false)?></td>
                     <td><?=(($d->cliente)?:'Não Informado')?></td>
                     <td>
 
@@ -169,6 +169,13 @@
                       <div class="col-12">
                       <label class="label">Valor</label>
                        <div><?=number_format($d->valor,2,',',false)?></div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                      <label class="label">Cliente</label>
+                       <div><?=(($d->usuario_nome)?:'Não Informado')?></div>
                       </div>
                     </div>
 
