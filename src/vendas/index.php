@@ -68,7 +68,7 @@
                 </thead>
                 <tbody>
                   <?php
-                  $query = "select a.*, b.nome as usuario_nome from vendas a left join usuarios b on a.usuario = b.codigo where a.deletado != '1' {$where} order by a.data desc";
+                  $query = "select a.*, b.nome as usuario_nome, c.combustivel from vendas a left join usuarios b on a.usuario = b.codigo left join combustiveis c on a.combustivel = c.codigo where a.deletado != '1' {$where} order by a.data desc";
                     $result = sisLog($query);
                     
                     while($d = mysqli_fetch_object($result)){
@@ -113,7 +113,7 @@
 
             <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">
             <?php
-                  $query = "select a.*, b.nome as usuario_nome from vendas a left join usuarios b on a.usuario = b.codigo where a.deletado != '1' {$where} order by a.data desc";
+                  $query = "select a.*, b.nome as usuario_nome, c.combustivel from vendas a left join usuarios b on a.usuario = b.codigo left join combustiveis c on a.combustivel = c.codigo where a.deletado != '1' {$where} order by a.data desc";
                   $result = sisLog($query);
                   
                   while($d = mysqli_fetch_object($result)){
