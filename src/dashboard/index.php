@@ -3,18 +3,18 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
 
-    $q = "select 
-                (select sum(ValorPedidoXquantidade) from relatorio where deletado != '1' {$where} ) as pagamento_produto,   
-                (select sum(CustoEnvio) from relatorio where deletado != '1' {$where} ) as pagamento_frete,   
-                (select sum(PrecoCusto) from relatorio where deletado != '1' {$where} ) as custo_produto,   
-                (select sum(CustoEnvioSeller) from relatorio where deletado != '1' {$where} ) as custo_frete,   
-                (select sum(TarifaGatwayPagamento + TarifaMarketplace) from relatorio where deletado != '1' {$where} ) as comissão,   
-                (select sum(ValorPedidoXquantidade - PrecoCusto - CustoEnvioSeller - TarifaGatwayPagamento - TarifaMarketplace) from relatorio where deletado != '1' {$where} ) as lucro,
-                (select count(*) from planilhas) as planilhas,
-                (select count(*) from relatorio where 1 {$where} ) as vendas
-        ";
-    $r = mysqli_query($con, $q);
-    $v = mysqli_fetch_object($r);
+    // $q = "select 
+    //             (select sum(ValorPedidoXquantidade) from relatorio where deletado != '1' {$where} ) as pagamento_produto,   
+    //             (select sum(CustoEnvio) from relatorio where deletado != '1' {$where} ) as pagamento_frete,   
+    //             (select sum(PrecoCusto) from relatorio where deletado != '1' {$where} ) as custo_produto,   
+    //             (select sum(CustoEnvioSeller) from relatorio where deletado != '1' {$where} ) as custo_frete,   
+    //             (select sum(TarifaGatwayPagamento + TarifaMarketplace) from relatorio where deletado != '1' {$where} ) as comissão,   
+    //             (select sum(ValorPedidoXquantidade - PrecoCusto - CustoEnvioSeller - TarifaGatwayPagamento - TarifaMarketplace) from relatorio where deletado != '1' {$where} ) as lucro,
+    //             (select count(*) from planilhas) as planilhas,
+    //             (select count(*) from relatorio where 1 {$where} ) as vendas
+    //     ";
+    // $r = mysqli_query($con, $q);
+    // $v = mysqli_fetch_object($r);
     
 ?>
 <style>
@@ -68,54 +68,9 @@
 
     <div class="row g-0">
         <div class="col-md-12 p-2">
-            <h6>Resumo Financeiro <?=(($_SESSION['dashboardDataInicial'] and $_SESSION['dashboardDataFinal'])? "de ".dataBr($_SESSION['dashboardDataInicial'])." a ".dataBr($_SESSION['dashboardDataFinal']):'Geral')?></h6>
+            <h6>Vendas por Frentista</h6>
         </div>
-        <div class="col-md-2 p-2">
-            <div class="alert alert-secondary" role="alert">
-                <span>Pagamento Produto</span>
-                <h3>R$ <?=number_format($v->pagamento_produto,2,',','.')?></h3>
-            </div>
-        </div>
-        <div class="col-md-2 p-2">
-            <div class="alert alert-secondary" role="alert">
-                <span>Pagamento Frete</span>
-                <h3>R$ <?=number_format($v->pagamento_frete,2,',','.')?></h3>
-            </div>
-        </div>
-        <div class="col-md-2 p-2">
-            <div class="alert alert-warning" role="alert">
-                <span>Custo Produto</span>
-                <h3>R$ <?=number_format($v->custo_produto,2,',','.')?></h3>
-            </div>
-        </div>
-        <div class="col-md-2 p-2">
-            <div class="alert alert-secondary" role="alert">
-                <span>Custo Frete</span>
-                <h3>R$ <?=number_format($v->custo_frete,2,',','.')?></h3>
-            </div>
-        </div>
-        <div class="col-md-2 p-2">
-            <div class="alert alert-primary" role="alert">
-                <span>Comissão</span>
-                <h3>R$ <?=number_format($v->comissão,2,',','.')?></h3>
-            </div>
-        </div>
-        <div class="col-md-2 p-2">
-            <div class="alert alert-success" role="alert">
-                <span>Lucro</span>
-                <h3>R$ <?=number_format($v->lucro,2,',','.')?></h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="row g-0">
-        <div class="col-md-4 p-2">
-            <h6>Importação por Origem</h6>
-        </div>
-        <div class="col-md-8 p-2">
-            <h6>Arrecadação por Origem</h6>
-        </div>
-        <div class="col-md-4 p-2">
+        <div class="col-md-12 p-2">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -126,60 +81,16 @@
                     </thead>
                     <tbody>
                     <?php
-                    // $q = "select a.*, (select count(*) from relatorio where origem = a.codigo {$where} ) as qt from origens a order by a.nome";
-                    // $r = mysqli_query($con, $q);
-                    // while($s = mysqli_fetch_object($r)){
+                    $q = "select cont(*) as quantidade, b.combustivel, c.nome from vendas a left join combustiveis b on a.combutivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1'";
+                    $r = mysqli_query($con, $q);
+                    while($s = mysqli_fetch_object($r)){
                     ?>
                     <tr>
-                        <td><?=$s->nome?></td>
-                        <td class="text-center"><?=$s->qt?></td>
+                        <td><?=$s->combustivel?></td>
+                        <td class="text-center"><?=$s->quantidade?></td>
                     </tr>                
                     <?php
-                    // }
-                    ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col-md-8 p-2">
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Origem</th>
-                            <th>Pagamento Produto</th>
-                            <th>Pagamento Frete</th>
-                            <th>Custo Produto</th>
-                            <th>Custo Frete</th>
-                            <th>Comissão</th>
-                            <th>Lucro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    // $q = "select 
-                    //             a.*,
-                    //             (select sum(ValorPedidoXquantidade) from relatorio where origem = a.codigo and deletado != '1' {$where} ) as pagamento_produto,   
-                    //             (select sum(CustoEnvio) from relatorio where origem = a.codigo and deletado != '1' {$where}) as pagamento_frete,   
-                    //             (select sum(PrecoCusto) from relatorio where origem = a.codigo and deletado != '1' {$where}) as custo_produto,   
-                    //             (select sum(CustoEnvioSeller) from relatorio where origem = a.codigo and deletado != '1' {$where}) as custo_frete,   
-                    //             (select sum(TarifaGatwayPagamento + TarifaMarketplace) from relatorio where origem = a.codigo and deletado != '1' {$where}) as comissão,   
-                    //             (select sum(ValorPedidoXquantidade - PrecoCusto - CustoEnvioSeller - TarifaGatwayPagamento - TarifaMarketplace) from relatorio where origem = a.codigo and deletado != '1' {$where}) as lucro   
-                    //         from origens a order by a.nome";
-                    // $r = mysqli_query($con, $q);
-                    // while($s = mysqli_fetch_object($r)){
-                    ?>
-                    <tr>
-                        <td><?=$s->nome?></td>
-                        <td>R$ <?=number_format($s->pagamento_produto,2,',','.')?></td>
-                        <td>R$ <?=number_format($s->pagamento_frete,2,',','.')?></td>
-                        <td>R$ <?=number_format($s->custo_produto,2,',','.')?></td>
-                        <td>R$ <?=number_format($s->custo_frete,2,',','.')?></td>
-                        <td>R$ <?=number_format($s->comissão,2,',','.')?></td>
-                        <td>R$ <?=number_format($s->lucro,2,',','.')?></td>
-                    </tr>                
-                    <?php
-                    // }
+                    }
                     ?>
                     </tbody>
                 </table>
@@ -195,6 +106,25 @@
 <script>
     $(function(){
         Carregando('none')
+
+        $("button[filtro]").click(function(){
+          filtro = $(this).attr("filtro");
+          dashboardDataInicial = $("#data_inicial").val();
+          dashboardDataFinal = $("#data_final").val();
+          Carregando()
+          $.ajax({
+              url:"src/dashboard/index.php",
+              type:"POST",
+              data:{
+                  filtro,
+                  dashboardDataInicial,
+                  dashboardDataFinal
+              },
+              success:function(dados){
+                  $("#paginaHome").html(dados);
+              }
+          })
+        })
         
     })
 </script>
