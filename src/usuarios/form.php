@@ -71,6 +71,15 @@
                 </div>
 
                 <div class="form-floating mb-3">
+                    <input type="text" name="telefone" inputmode="numeric" id="telefone" class="form-control" placeholder="Telefone" value="<?=$d->telefone?>">
+                    <label for="telefone">Telefone</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
+                    <label for="email">E-mail</label>
+                </div>
+
+                <div class="form-floating mb-3">
                     <input type="text" name="senha" id="senha" class="form-control" placeholder="E-mail" value="">
                     <label for="senha">Senha</label>
                 </div>
@@ -105,6 +114,7 @@
             Carregando('none');
 
             $("#cpf").mask("999.999.999-99");
+            $("#telefone").mask("(99) 9 9999-9999");
 
 
             $('#form-<?=$md5?>').submit(function (e) {
