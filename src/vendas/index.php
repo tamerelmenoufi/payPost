@@ -79,7 +79,7 @@
                     <td><?=dataBr($d->data)?></td>
                     <td><?=$d->usuario_nome?></td>
                     <td><?=$d->combustivel?></td>
-                    <td><?=number_format($d->quantidade,2,',',false)?></td>
+                    <td><?=number_format($d->quantidade,3,',',false)?></td>
                     <td><?=number_format($d->valor,2,',',false)?></td>
                     <td><?=(($d->cliente)?:'Não Informado')?></td>
                     <td>
