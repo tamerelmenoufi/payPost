@@ -109,7 +109,8 @@
             </div>
             <div>
                 <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control formDados" autocomplete="off" value="<?=$d->email?>" id="email">
+                <div class="form-control is-valid" ><?=$d->email?></div>
+                <!-- <input type="email" class="form-control formDados" autocomplete="off" value="<?=$d->email?>" id="email"> -->
             </div>        
         </div>
     </div>
