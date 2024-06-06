@@ -18,7 +18,8 @@
         <div class="card">
           <h5 class="card-header">Lista de Vendas</h5>
           <div class="card-body">
-            <div class="d-none d-md-block">
+
+            <!-- <div class="d-none d-md-block">
               <div class="d-flex justify-content-between mb-3">
 
                   <div class="input-group">
@@ -58,7 +59,7 @@
                     </div>
                   </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="lista_vendas"></div>
 
