@@ -116,6 +116,13 @@
 
         <div class="row">
             <div class="col-12">
+            <label class="label">Bomba</label>
+            <div><?=$d->bomba?></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
             <label class="label">Combustível</label>
             <div><?=$d->combustivel?></div>
             </div>

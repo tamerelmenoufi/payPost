@@ -49,6 +49,21 @@
         <div class="card p-2">
             <h4 class="w-100 text-center">Registro da Venda</h4>
             <div class="mb-1">
+                <label for="bomba" class="form-label">Combustível</label>
+                <select name="bomba" id="bomba" class="form-select">
+                    <?php
+                    $q = "select * from bombas where situacao = '1' order by ordem asc";
+                    $r = mysqli_query($con, $q);
+                    while($s = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$s->codigo?>"><?=$s->bomba?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="mb-1">
                 <label for="nome" class="form-label">Combustível</label>
                 <select name="combustivel" id="combustivel" class="form-select">
                     <?php
