@@ -45,7 +45,7 @@
             <input class="form-check-input pago" type="checkbox" <?=(($d->pago)?'checked':false)?> pago="<?=$d->codigo?>">
         </div> -->
         <button class="btn btn-success pago" pago="<?=$d->codigo?>">
-            Pagar
+            Validar
         </button>
 
         </td>
@@ -88,7 +88,7 @@
                 Pago
             </div> -->
             <button class="btn btn-success pago" pago="<?=$d->codigo?>">
-                Pagar
+                Validar
             </button>
             </div>
         </div>
