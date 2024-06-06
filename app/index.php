@@ -135,6 +135,10 @@
     <script>
         $(function(){
 
+            atualizacao = setTimeout(() => {
+                return false;
+            }, 1000);
+
             idUnico = localStorage.getItem("idUnico");
             codUsr = localStorage.getItem("codUsr");
 

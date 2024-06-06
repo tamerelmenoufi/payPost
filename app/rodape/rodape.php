@@ -147,6 +147,7 @@ $pdAtiva = $_SESSION['historico'][$i]['local'];
             codUsr = localStorage.getItem("codUsr");
             if(!codUsr) return false;
             Carregando();
+            clearTimeout(atualizacao);
             $.ajax({
                 url,
                 type:"POST",

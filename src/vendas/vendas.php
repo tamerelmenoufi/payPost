@@ -164,7 +164,7 @@
 
 <script>
     $(function(){
-        setTimeout(() => {
+        atualizacao = setTimeout(() => {
             $.ajax({
                 url:"src/vendas/vendas.php",
                 type:"POST",
