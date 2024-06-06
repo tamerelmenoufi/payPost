@@ -1,5 +1,20 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
+
+
+    if($_POST['delete']){
+        // $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+        $query = "update usuarios set deletado = '1' where codigo = '{$_POST['delete']}'";
+        sisLog($query);
+      }
+  
+      if($_POST['situacao']){
+        $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+        sisLog($query);
+        exit();
+      }
+  
+
 ?>
 
 <div class="col">
@@ -101,6 +116,33 @@
                 }
             });
         })
+
+
+        $(document).off("change").on("change",".situacao",function(){
+
+            situacao = $(this).attr("usuario");
+            opc = false;
+
+            if($(this).prop("checked") == true){
+            opc = '1';
+            }else{
+            opc = '0';
+            }
+
+
+            $.ajax({
+                url:"src/vendas/index.php",
+                type:"POST",
+                data:{
+                    situacao,
+                    opc
+                },
+                success:function(dados){
+                    // $("#paginaHome").html(dados);
+                }
+            })
+
+        });
 
     })
 </script>
