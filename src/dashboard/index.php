@@ -3,18 +3,13 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
 
-    // $q = "select 
-    //             (select sum(ValorPedidoXquantidade) from relatorio where deletado != '1' {$where} ) as pagamento_produto,   
-    //             (select sum(CustoEnvio) from relatorio where deletado != '1' {$where} ) as pagamento_frete,   
-    //             (select sum(PrecoCusto) from relatorio where deletado != '1' {$where} ) as custo_produto,   
-    //             (select sum(CustoEnvioSeller) from relatorio where deletado != '1' {$where} ) as custo_frete,   
-    //             (select sum(TarifaGatwayPagamento + TarifaMarketplace) from relatorio where deletado != '1' {$where} ) as comissão,   
-    //             (select sum(ValorPedidoXquantidade - PrecoCusto - CustoEnvioSeller - TarifaGatwayPagamento - TarifaMarketplace) from relatorio where deletado != '1' {$where} ) as lucro,
-    //             (select count(*) from planilhas) as planilhas,
-    //             (select count(*) from relatorio where 1 {$where} ) as vendas
-    //     ";
-    // $r = mysqli_query($con, $q);
-    // $v = mysqli_fetch_object($r);
+     $q = "select 
+                 (select count(*) from usuarios where deletado != '1') as usuarios,   
+                 (select count(*) from vendas where deletado != '1' {$where} ) as vendas,   
+                 (select sum(valor) from vendas where deletado != '1' {$where} ) as total
+         ";
+     $r = mysqli_query($con, $q);
+     $v = mysqli_fetch_object($r);
     
 ?>
 <style>
@@ -48,8 +43,8 @@
         </div>
         <div class="col-md-4 p-2">
             <div class="alert alert-secondary" role="alert">
-                <span>Planilhas Importadas</span>
-                <h1><?=$v->planilhas?></h1>
+                <span>Quantidade de Frentistas</span>
+                <h1><?=$v->frentistas?></h1>
             </div>
         </div>
         <div class="col-md-4 p-2">
@@ -61,7 +56,7 @@
         <div class="col-md-4 p-2">
             <div class="alert alert-success" role="alert">
                 <span>Total Arrecadado</span>
-                <h1>R$ <?=number_format($v->pagamento_produto,2,',','.')?></h1>
+                <h1>R$ <?=number_format($v->total,2,',','.')?></h1>
             </div>
         </div>
     </div>
