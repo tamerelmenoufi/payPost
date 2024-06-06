@@ -49,7 +49,7 @@
         <div class="card p-2">
             <h4 class="w-100 text-center">Registro da Venda</h4>
             <div class="mb-1">
-                <label for="bomba" class="form-label">Combustível</label>
+                <label for="bomba" class="form-label">Bomba</label>
                 <select name="bomba" id="bomba" class="form-select">
                     <?php
                     $q = "select * from bombas where situacao = '1' order by ordem asc";
