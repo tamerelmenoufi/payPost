@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
   
       if($_POST['pago']){
-        echo $query = "update usuarios set pago = '{$_POST['opc']}' where codigo = '{$_POST['pago']}'";
+        $query = "update vendas set pago = '{$_POST['opc']}' where codigo = '{$_POST['pago']}'";
         sisLog($query);
         exit();
       }

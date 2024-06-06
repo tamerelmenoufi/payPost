@@ -3,7 +3,7 @@
 
     if($_POST['delete']){
         // $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
-        $query = "update usuarios set deletado = '1' where codigo = '{$_POST['delete']}'";
+        $query = "update vendas set deletado = '1' where codigo = '{$_POST['delete']}'";
         sisLog($query);
     }
 
