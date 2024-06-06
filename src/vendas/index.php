@@ -74,7 +74,7 @@
   </div>
 </div>
 
-<div class="popupConfirm" style="position:fixed; left:50px; top:90px; width:150px; height:90px; z-index:99">
+<div class="popupConfirm" style="position:fixed; right:50px; top:90px; width:300px; height:90px; z-index:99; display:none;">
   <div class="alert alert-success" role="alert">
     Validação realizada com sucesso!
   </div>
@@ -94,7 +94,7 @@
         })       
         
         tempo = setTimeout(() => {
-          $(".popupConfirm").css("display:none");
+          $(".popupConfirm").css("display","none");
         }, 2000);
 
 
@@ -136,7 +136,7 @@
             // }
 
 
-            $(".popupConfirm").css("display:flex");
+            $(".popupConfirm").css("display","flex");
             
 
             $.ajax({
