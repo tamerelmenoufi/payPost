@@ -170,6 +170,7 @@
                 type:"POST",
                 success:function(dados){
                     $(".lista_vendas").html(dados);
+                    console.log('verificado')
                 }
             })  
         }, 10000);
