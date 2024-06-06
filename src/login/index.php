@@ -149,15 +149,12 @@ include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
         <div class="card card-container">
             <div>
                 <h3 class="FonteBk_2 w-100" style="text-align:center">PAINEL DE CONTROLE</h3>
-                <img id="profile-img" class="profile-img-card" src="img/logo.png" />
-                                
-                <!-- <h1 class="FonteBk_2 w-100" style="text-align:center">BURGER KING</h1>                 -->
+                <img id="profile-img" class="profile-img-card" src="img/logo.png" />                                
             </div>
             <div class="form-floating mb-2">
                 <input type="text" class="form-control" id="login" placeholder="Digite seu login" required autofocus>
                 <label for="login">Login</label>
             </div>
-
             <div class="form-floating mb-2">
                 <input type="password" class="form-control" id="senha" placeholder="Digite sua Senha" required>
                 <label for="senha">Senha</label>
@@ -168,23 +165,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
                 </label>
             </div>
             <button id="Acessar" class="btn btn-lg btn-bk btn-block btn-signinXX" type="submit">Entrar</button>
-
-            <!-- <div class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="login" class="form-control" placeholder="Login">
-                <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-                <div id="remember" class="checkbox mb-1 mt-1">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Manter-me sempre conectado
-                    </label>
-                </div>
-
-            </div> -->
-            <a href="#" class="forgot-password">
-                Esqueceu a senha?
-            </a>
-        </div><!-- /card-container -->
-    </div><!-- /container -->
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+    </div>
 </div>
 
 <script>
