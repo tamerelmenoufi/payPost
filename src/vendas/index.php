@@ -92,10 +92,6 @@
                 $(".lista_vendas").html(dados);
             }
         })       
-        
-        tempo = setTimeout(() => {
-          $(".popupConfirm").css("display","none");
-        }, 2000);
 
 
         $(document).off("click").on("click", "button[delete]", function(){
@@ -148,11 +144,11 @@
                 },
                 success:function(dados){
                     // $("#paginaHome").html(dados);
-                    tempo();
                     $.ajax({
                         url:"src/vendas/vendas.php",
                         type:"POST",
                         success:function(dados){
+                          $(".popupConfirm").css("display","none");
                             $(".lista_vendas").html(dados);
                         }
                     })  
