@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
   
       if($_POST['pago']){
-        $query = "update usuarios set pago = '{$_POST['opc']}' where codigo = '{$_POST['pago']}'";
+        echo $query = "update usuarios set pago = '{$_POST['opc']}' where codigo = '{$_POST['pago']}'";
         sisLog($query);
         exit();
       }
@@ -113,8 +113,6 @@
 
         $(document).off("change").on("change",".pago",function(){
 
-            alert('ok')
-
             pago = $(this).attr("pago");
             opc = false;
 
@@ -133,7 +131,7 @@
                     opc
                 },
                 success:function(dados){
-                    alert('olá')
+                    console.log(dados)
                     // $("#paginaHome").html(dados);
                 }
             })
