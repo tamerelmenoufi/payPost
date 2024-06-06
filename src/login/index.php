@@ -148,7 +148,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
     <div class="container">
         <div class="card card-container">
             <div>
-                <h3 class="FonteBk_2 w-100" style="text-align:center">PAINEL DE CONTROLE</h3>
+                <h3 class="w-100" style="text-align:center">PAINEL DE CONTROLE</h3>
                 <img id="profile-img" class="profile-img-card" src="img/logo.png" />                                
             </div>
             <div class="form-floating mb-2">
