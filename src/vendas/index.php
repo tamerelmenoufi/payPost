@@ -164,7 +164,7 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-6 p-2">
+                      <!-- <div class="col-6 p-2">
                         <button
                           class="btn btn-primary w-100"
                           edit="<?=$d->codigo?>"
@@ -175,8 +175,8 @@
                         >
                           Editar
                         </button>
-                      </div>
-                      <div class="col-6 p-2">
+                      </div> -->
+                      <div class="col-12 p-2">
                         <button class="btn btn-danger w-100" delete="<?=$d->codigo?>">
                           Excluir
                         </button>
