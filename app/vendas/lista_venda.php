@@ -6,7 +6,7 @@
         <h4 class="w-100 text-center">Vendas Realizadas</h4>
         <ul class="list-group">
         <?php
-        $query = "select a.*, b.combustivel from vendas a left join combustiveis b on a.combustivel = b.codigo where a.usuario = '{$_SESSION['codUsr']}' order by a.data desc limit 50";
+        $query = "select a.*, b.combustivel from vendas a left join combustiveis b on a.combustivel = b.codigo where a.usuario = '{$_SESSION['codUsr']}' and a.deletado != '1' order by a.data desc limit 50";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
         ?>
