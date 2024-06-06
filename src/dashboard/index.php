@@ -86,7 +86,7 @@
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
 
-                        $pct = number_format(($d->quantidade * 100)/$d->total,0,false,false);
+                        $pct = number_format(($s->quantidade * 100)/$s->total,0,false,false);
 
                     ?>
                     <tr>
