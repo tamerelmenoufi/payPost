@@ -68,21 +68,21 @@
 
     <div class="row g-0">
         <div class="col-md-12 p-2">
-            <h6>Vendas por Frentista</h6>
+            <h6>Vendas por Combustível</h6>
         </div>
         <div class="col-md-12 p-2">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Origem</th>
+                            <th>Combustível</th>
                             <th class="text-center">Quantidade</th>
                             <th class="w-100">Comparativo Gráfico</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                    echo $q = "select count(*) as quantidade, (select count(*) from vendas where deletado != '1') as total, b.combustivel, c.nome from vendas a left join combustiveis b on a.combustivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1' group by a.combustivel order by quantidade desc";
+                    $q = "select count(*) as quantidade, (select count(*) from vendas where deletado != '1') as total, b.combustivel, c.nome from vendas a left join combustiveis b on a.combustivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1' group by a.combustivel order by quantidade desc";
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
 
@@ -91,6 +91,49 @@
                     ?>
                     <tr>
                         <td><?=$s->combustivel?></td>
+                        <td class="text-center"><?=$s->quantidade?></td>
+                        <td><?=$s->total?>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: <?=$pct?>%;" aria-valuenow="<?=$pct?>" aria-valuemin="0" aria-valuemax="100"><?=$pct?>%</div>
+                            </div>
+                        </td>
+                    </tr>                
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row g-0">
+        <div class="col-md-12 p-2">
+            <h6>Vendas por Frentista</h6>
+        </div>
+        <div class="col-md-12 p-2">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th class="text-center">Quantidade</th>
+                            <th class="w-100">Comparativo Gráfico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    echo $q = "select count(*) as quantidade, (select count(*) from vendas where deletado != '1') as total, b.combustivel, c.nome from vendas a left join combustiveis b on a.combustivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1' group by a.usuario order by quantidade desc";
+                    $r = mysqli_query($con, $q);
+                    while($s = mysqli_fetch_object($r)){
+
+                        $pct = number_format(($s->quantidade * 100)/$s->total,0,false,false);
+
+                    ?>
+                    <tr>
+                        <td><?=$s->nome?></td>
                         <td class="text-center"><?=$s->quantidade?></td>
                         <td><?=$s->total?>
                             <div class="progress">
