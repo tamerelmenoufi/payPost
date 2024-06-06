@@ -33,7 +33,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/vendas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Vendas</span>
+          <i class="fa-solid fa-gas-pump"></i> <span class="col-11">Vendas</span>
         </a>
       </div>
     </div>
