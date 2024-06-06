@@ -2,6 +2,16 @@
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
+    $query = "select * from usuarios where telefone = '{$_POST['telefone']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    if(!$d->codigo){
+        echo "{\"status\":\"error\", \"codigo\":\"\"}";
+        exit();
+
+    }
+
 
     $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
     if(strlen($telefone) != 11){
