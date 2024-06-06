@@ -39,7 +39,7 @@
     }
 
 
-    .home_corpo{
+    .home_corpo_venda{
         position: absolute;
         top:100px;
         bottom:180px;
