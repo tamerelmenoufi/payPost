@@ -113,7 +113,7 @@
 
 
         $(document).off("click").on("click",".pago",function(){
-
+alert('teste')
             pago = $(this).attr("pago");
             opc = '1';
 
