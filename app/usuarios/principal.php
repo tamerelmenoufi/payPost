@@ -153,9 +153,10 @@ $(function(){
                                 
                         });
                     }else{
+                        Carregando('none');
                         $.alert({
-                            title:"Erro Telefone",
-                            content:"Seu número está errado, favor conferir e repetir a ação.",
+                            title:"Falha Telefone",
+                            content:"Seu número não está cadastrado, favor consulte a administração.",
                             type:'red',
                             columnClass:'col-12',
                         })
