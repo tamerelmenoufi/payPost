@@ -95,11 +95,13 @@
             <h4 class="w-100 text-center">DADOS PESSOAIS</h4>
             <div class="mb-1">
                 <label for="nome" class="form-label">Nome Completo</label>
-                <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->nome?>" id="nome">
+                <div class="form-control is-valid" ><?=$d->nome?></div>
+                <!-- <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->nome?>" id="nome"> -->
             </div>
             <div class="mb-1">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->cpf?>" id="cpf">
+                <div class="form-control is-valid" ><?=$d->cpf?></div>
+                <!-- <input type="text" class="form-control formDados" autocomplete="off" value="<?=$d->cpf?>" id="cpf"> -->
             </div>
             <div class="mb-1">
                 <label class="form-label">Telefone</label>
