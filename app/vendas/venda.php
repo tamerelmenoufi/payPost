@@ -143,11 +143,11 @@
                 return false;
             }
 
+            // <br>Litros: <b>${quantidade}</b>
             $.confirm({
                 title:"Confirmação da Venda",
                 content:`Sua venda está definida com os seguintes dados:
                         <br>Combustível: <b>${combustivel_nome}</b>
-                        <!--<br>Litros: <b>${quantidade}</b>-->
                         <br>Valor: <b>${valor}</b>
                         <br>Nome do Cliente: <b>${cliente}</b>`,
                 type:"blue",
