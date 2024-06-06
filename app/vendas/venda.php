@@ -142,6 +142,7 @@
 
         $(".registrar").click(function(){
 
+            bomba = $("#bomba").val();
             combustivel = $("#combustivel").val();
             combustivel_nome = $(`option[value="${combustivel}"]`).text();
             // quantidade = $("#quantidade").val();
@@ -149,7 +150,7 @@
             cliente = $("#cliente").val();
 
 
-            if(!combustivel || /*!quantidade ||*/ !valor){
+            if(!bomba || !combustivel || /*!quantidade ||*/ !valor){
                 $.alert({
                     title:"Erro",
                     content:"Preencha os campos obrigatórios!",
@@ -181,6 +182,7 @@
                                 idUnico,
                                 codUsr,
                                 acao:"venda",
+                                bomba,
                                 combustivel,
                                 // quantidade,
                                 valor,

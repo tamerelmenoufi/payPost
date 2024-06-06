@@ -16,6 +16,7 @@
         <th scope="col">Venda</th>
         <th scope="col">Data</th>
         <th scope="col">Frentista</th>
+        <th scope="col">Bomba</th>
         <th scope="col">Combustível</th>
         <!-- <th scope="col">Litros</th> -->
         <th scope="col">Valor</th>
@@ -26,7 +27,13 @@
     </thead>
     <tbody>
         <?php
-        $query = "select a.*, b.nome as usuario_nome, c.combustivel from vendas a left join usuarios b on a.usuario = b.codigo left join combustiveis c on a.combustivel = c.codigo where a.deletado != '1' and pago != '1' {$where} order by a.data desc";
+        $query = "select a.*, 
+                            b.nome as usuario_nome, c.combustivel 
+                    from vendas a 
+                    left join usuarios b on a.usuario = b.codigo 
+                    left join combustiveis c on a.combustivel = c.codigo 
+                    left join bombas d on a.bomba = d.codigo 
+                    where a.deletado != '1' and pago != '1' {$where} order by a.data desc";
         $result = sisLog($query);
         
         while($d = mysqli_fetch_object($result)){
@@ -35,6 +42,7 @@
         <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
         <td><?=dataBr($d->data)?></td>
         <td><?=$d->usuario_nome?></td>
+        <td><?=$d->bomba?></td>
         <td><?=$d->combustivel?></td>
         <!-- <td><?=number_format($d->quantidade,3,',',false)?></td> -->
         <td><?=number_format($d->valor,2,',',false)?></td>
@@ -75,7 +83,13 @@
 
 <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">
 <?php
-        $query = "select a.*, b.nome as usuario_nome, c.combustivel from vendas a left join usuarios b on a.usuario = b.codigo left join combustiveis c on a.combustivel = c.codigo where a.deletado != '1' and pago != '1' {$where} order by a.data desc";
+        $query = "select a.*, 
+                            b.nome as usuario_nome, c.combustivel 
+                    from vendas a 
+                    left join usuarios b on a.usuario = b.codigo 
+                    left join combustiveis c on a.combustivel = c.codigo 
+                    left join bombas d on a.bomba = d.codigo 
+                    where a.deletado != '1' and pago != '1' {$where} order by a.data desc";
         $result = sisLog($query);
         
         while($d = mysqli_fetch_object($result)){
