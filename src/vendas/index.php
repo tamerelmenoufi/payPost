@@ -1,12 +1,5 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
-
-
-    if($_POST['delete']){
-        // $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
-        $query = "update usuarios set deletado = '1' where codigo = '{$_POST['delete']}'";
-        sisLog($query);
-      }
   
       if($_POST['situacao']){
         $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
