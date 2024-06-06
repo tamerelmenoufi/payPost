@@ -148,7 +148,7 @@
                         url:"src/vendas/vendas.php",
                         type:"POST",
                         success:function(dados){
-                          $(".popupConfirm").css("display","none");
+                            $(".popupConfirm").css("display","none");
                             $(".lista_vendas").html(dados);
                         }
                     })  
