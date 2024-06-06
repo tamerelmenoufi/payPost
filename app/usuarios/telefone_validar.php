@@ -2,7 +2,7 @@
     $app = true;
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
 
-    $query = "select * from usuarios where telefone = '{$_POST['telefone']}'";
+    $query = "select * from usuarios where telefone = '{$_POST['telefone']}' and situacao = '1' and deletado != '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
