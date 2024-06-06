@@ -4,7 +4,7 @@
 
 
      $q = "select 
-                 (select count(*) from usuarios where deletado != '1') as usuarios,   
+                 (select count(*) from usuarios where deletado != '1') as frentistas,   
                  (select count(*) from vendas where deletado != '1' {$where} ) as vendas,   
                  (select sum(valor) from vendas where deletado != '1' {$where} ) as total
          ";
