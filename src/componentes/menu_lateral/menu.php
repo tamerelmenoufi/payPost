@@ -25,7 +25,7 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/usuarios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Usuários do Sistema</span>
+          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Usuários/Frentista</span>
         </a>
       </div>
     </div>
