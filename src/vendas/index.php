@@ -77,7 +77,7 @@
         })        
 
 
-        $("button[delete]").click(function(){
+        $(document).off("click").on("click", "button[delete]", function(){
             deletar = $(this).attr("delete");
             $.confirm({
                 content:"Deseja realmente excluir a venda ?",
