@@ -82,7 +82,7 @@
                     </thead>
                     <tbody>
                     <?php
-                    echo $q = "select count(*) as quantidade, sum(count(*)) as total, b.combustivel, c.nome from vendas a left join combustiveis b on a.combustivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1' group by a.combustivel order by quantidade desc";
+                    echo $q = "select count(*) as quantidade, (select count(*) from vendas where deletado != '1') as total, b.combustivel, c.nome from vendas a left join combustiveis b on a.combustivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1' group by a.combustivel order by quantidade desc";
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
                     ?>
