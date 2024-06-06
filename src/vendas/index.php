@@ -161,14 +161,14 @@
                     <div class="row">
                       <div class="col-12">
                       <label class="label">Litros</label>
-                       <div><?=$d->quantidade?></div>
+                       <div><?=number_format($d->quantidade,3,',',false)?></div>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col-12">
                       <label class="label">Valor</label>
-                       <div><?=$d->valor?></div>
+                       <div><?=number_format($d->valor,2,',',false)?></div>
                       </div>
                     </div>
 
