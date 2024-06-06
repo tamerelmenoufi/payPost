@@ -85,11 +85,18 @@
                     echo $q = "select count(*) as quantidade, (select count(*) from vendas where deletado != '1') as total, b.combustivel, c.nome from vendas a left join combustiveis b on a.combustivel = b.codigo left join usuarios c on a.usuario = c.codigo where a.deletado != '1' group by a.combustivel order by quantidade desc";
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
+
+                        $pct = number_format(($d->quantidade * 100)/$d->total,0,false,false);
+
                     ?>
                     <tr>
                         <td><?=$s->combustivel?></td>
                         <td class="text-center"><?=$s->quantidade?></td>
-                        <td><?=$s->total?></td>
+                        <td><?=$s->total?>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: <?=$pct?>%;" aria-valuenow="<?=$pct?>" aria-valuemin="0" aria-valuemax="100"><?=$pct?>%</div>
+                            </div>
+                        </td>
                     </tr>                
                     <?php
                     }
