@@ -20,7 +20,7 @@
         <!-- <th scope="col">Litros</th> -->
         <th scope="col">Valor</th>
         <th scope="col">Cliente</th>
-        <th scope="col">Pago</th>
+        <th scope="col">Receber Pagamento</th>
         <th scope="col">Ações</th>
         </tr>
     </thead>

@@ -115,7 +115,7 @@
         $(document).off("click").on("click",".pago",function(){
 
             pago = $(this).attr("pago");
-            opc = 1;
+            opc = '1';
 
             // if($(this).prop("checked") == true){
             // opc = '1';
@@ -133,7 +133,7 @@
                 },
                 success:function(dados){
                     console.log(dados)
-                    // $("#paginaHome").html(dados);
+                    $(".paginaHome").html(dados);
                 }
             })
 
