@@ -77,6 +77,7 @@
                         <tr>
                             <th>Origem</th>
                             <th class="text-center">Quantidade</th>
+                            <th class="w-100">Comparativo Gráfico</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,6 +89,7 @@
                     <tr>
                         <td><?=$s->combustivel?></td>
                         <td class="text-center"><?=$s->quantidade?></td>
+                        <td><?=$s->total?></td>
                     </tr>                
                     <?php
                     }
