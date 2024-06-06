@@ -33,7 +33,15 @@
     <div class="row mb-1">
       <div class="col">
         <a url="src/vendas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-gas-pump"></i> <span class="col-11">Vendas</span>
+          <i class="fa-solid fa-gas-pump"></i> <span class="col-11">Vendas pendentes</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-1">
+      <div class="col">
+        <a url="src/vendas/geral.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-gas-pump"></i> <span class="col-11">Histórico Vendas</span>
         </a>
       </div>
     </div>
