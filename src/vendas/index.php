@@ -4,7 +4,7 @@
       if($_POST['pago']){
         $query = "update vendas set pago = '{$_POST['opc']}' where codigo = '{$_POST['pago']}'";
         sisLog($query);
-        exit();
+        // exit();
       }
   
 
@@ -100,8 +100,6 @@
 
         $(document).off("click").on("click", "button[delete]", function(){
             deletar = $(this).attr("delete");
-            // $(".popupConfirm").css("display:flex");
-            // tempo();
             $.confirm({
                 content:"Deseja realmente excluir a venda ?",
                 title:false,
@@ -114,7 +112,7 @@
                                 delete:deletar
                             },
                             success:function(dados){
-                                $(".lista_vendas").html(dados);
+                                // $(".lista_vendas").html(dados);
                             }
                         })
                     },
@@ -138,6 +136,9 @@
             // }
 
 
+            $(".popupConfirm").css("display:flex");
+            
+
             $.ajax({
                 url:"src/vendas/index.php",
                 type:"POST",
@@ -146,7 +147,15 @@
                     opc
                 },
                 success:function(dados){
-                    $("#paginaHome").html(dados);
+                    // $("#paginaHome").html(dados);
+                    tempo();
+                    $.ajax({
+                        url:"src/vendas/vendas.php",
+                        type:"POST",
+                        success:function(dados){
+                            $(".lista_vendas").html(dados);
+                        }
+                    })  
                 }
             })
 
