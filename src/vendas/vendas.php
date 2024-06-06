@@ -17,7 +17,7 @@
         <th scope="col">Data</th>
         <th scope="col">Frentista</th>
         <th scope="col">Combustível</th>
-        <th scope="col">Litros</th>
+        <!-- <th scope="col">Litros</th> -->
         <th scope="col">Valor</th>
         <th scope="col">Cliente</th>
         <th scope="col">Pago</th>
@@ -36,7 +36,7 @@
         <td><?=dataBr($d->data)?></td>
         <td><?=$d->usuario_nome?></td>
         <td><?=$d->combustivel?></td>
-        <td><?=number_format($d->quantidade,3,',',false)?></td>
+        <!-- <td><?=number_format($d->quantidade,3,',',false)?></td> -->
         <td><?=number_format($d->valor,2,',',false)?></td>
         <td><?=(($d->cliente)?:'Não Informado')?></td>
         <td>
@@ -115,12 +115,12 @@
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
             <label class="label">Litros</label>
             <div><?=number_format($d->quantidade,3,',',false)?></div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-12">
