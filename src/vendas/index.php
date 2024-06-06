@@ -56,6 +56,7 @@
               <table class="table table-striped table-hover">
                 <thead>
                   <tr>
+                    <th scope="col">Venda</th>
                     <th scope="col">Data</th>
                     <th scope="col">Frentista</th>
                     <th scope="col">Combustível</th>
@@ -74,6 +75,7 @@
                     while($d = mysqli_fetch_object($result)){
                   ?>
                   <tr>
+                    <td><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></td>
                     <td><?=dataBr($d->data)?></td>
                     <td><?=$d->usuario_nome?></td>
                     <td><?=$d->combustivel?></td>
@@ -125,6 +127,13 @@
                           <input class="form-check-input pago" type="checkbox" <?=(($d->pago)?'checked':false)?> pago="<?=$d->codigo?>">
                           Pago
                         </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <label class="label">Venda</label>
+                        <div><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></div>
                       </div>
                     </div>
 
