@@ -62,7 +62,7 @@
     <h2>Venda</h2>
 </div>
 
-<div class="home_corpo"></div>
+<div class="home_corpo_venda"></div>
 
 <div class="home_rodape"></div>
 
@@ -97,7 +97,7 @@
         $.ajax({
             url:"vendas/lista_venda.php",
             success:function(dados){
-                $(".home_corpo").html(dados);
+                $(".home_corpo_venda").html(dados);
             }
         })        
 

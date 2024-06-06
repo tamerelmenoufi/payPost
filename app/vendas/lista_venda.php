@@ -42,7 +42,7 @@
                         codUsr
                     },
                     success:function(dados){
-                        $(".home_corpo").html(dados);
+                        $(".home_corpo_venda").html(dados);
                     }
                 })
             }, 10000);
