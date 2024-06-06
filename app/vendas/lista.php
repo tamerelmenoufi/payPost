@@ -6,6 +6,7 @@
 
         $query = "insert into vendas set 
                                         usuario = '{$_SESSION['codUsr']}',
+                                        bomba = '{$_POST['bomba']}',
                                         combustivel = '{$_POST['combustivel']}',
                                         quantidade = '".str_replace(",", ".", $_POST['quantidade'])."',
                                         valor  = '".str_replace(",", ".", $_POST['valor'])."',
