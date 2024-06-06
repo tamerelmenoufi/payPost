@@ -101,6 +101,7 @@
         $(document).off("click").on("click", "button[delete]", function(){
             deletar = $(this).attr("delete");
             $(".popupConfirm").css("display:flex");
+            tempo();
             $.confirm({
                 content:"Deseja realmente excluir a venda ?",
                 title:false,
@@ -114,7 +115,6 @@
                             },
                             success:function(dados){
                                 $(".lista_vendas").html(dados);
-                                tempo();
                             }
                         })
                     },
