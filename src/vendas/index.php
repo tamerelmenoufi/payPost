@@ -113,6 +113,8 @@
 
         $(document).off("change").on("change",".situacao",function(){
 
+            alert('ok')
+
             situacao = $(this).attr("usuario");
             opc = false;
 
@@ -131,6 +133,7 @@
                     opc
                 },
                 success:function(dados){
+                    alert('olá')
                     // $("#paginaHome").html(dados);
                 }
             })
