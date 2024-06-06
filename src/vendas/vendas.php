@@ -42,7 +42,7 @@
                     <td>
 
                     <div class="form-check form-switch">
-                      <input class="form-check-input pago" type="checkbox" <?=(($d->pago)?'checked':false)?> usuario="<?=$d->codigo?>">
+                      <input class="form-check-input pago" type="checkbox" <?=(($d->pago)?'checked':false)?> pago="<?=$d->codigo?>">
                     </div>
 
                     </td>
