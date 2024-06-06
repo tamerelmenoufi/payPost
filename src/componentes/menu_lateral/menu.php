@@ -32,44 +32,13 @@
 
     <div class="row mb-1">
       <div class="col">
-        <a url="src/entregadores/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Entregadores</span>
+        <a url="src/vendas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Vendas</span>
         </a>
       </div>
     </div>
 
-    <div class="row mb-1">
-      <div class="col">
-        <a url="src/lojas/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Lojas</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="row mb-1">
-      <div class="col">
-        <a url="src/categorias/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Categorias de Produtos</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="row mb-1">
-      <div class="col">
-        <a url="src/categorias_itens/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Categorias de Itens</span>
-        </a>
-      </div>
-    </div>
-
-
-    <div class="row mb-1">
-      <div class="col">
-        <a url="src/combos/index.php?categoria=8" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-user col-1"></i> <span class="col-11">Combos</span>
-        </a>
-      </div>
-    </div>
+  
 
   </div>
 </div>
