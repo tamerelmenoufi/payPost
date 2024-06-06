@@ -62,16 +62,16 @@
                     ?>
                 </select>
             </div>
-            <div class="mb-1">
+            <!-- <div class="mb-1">
                 <label for="quantidade" class="form-label">Quantidade</label>
                 <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="quantidade">
-            </div>
+            </div> -->
             <div class="mb-1">
                 <label for="valor" class="form-label">Valor</label>
                 <input type="text" inputmode="numeric" class="form-control formDados" autocomplete="off" id="valor">
             </div>
             <div class="mb-2">
-                <label for="cliente" class="form-label">Cliente</label>
+                <label for="cliente" class="form-label">Nome do Cliente</label>
                 <input type="text" class="form-control formDados" autocomplete="off" id="cliente">
             </div>
             <button type="button" class="btn btn-warning w-100 registrar">Registrar</button>  
@@ -88,14 +88,14 @@
         idUnico = localStorage.getItem("idUnico");
         codUsr = localStorage.getItem("codUsr");
 
-        $("#quantidade").maskMoney({
-                                    prefix:'',
-                                    allowNegative: false,
-                                    thousands:'', 
-                                    decimal:',', 
-                                    affixesStay: '',
-                                    precision:3
-                                });
+        // $("#quantidade").maskMoney({
+        //                             prefix:'',
+        //                             allowNegative: false,
+        //                             thousands:'', 
+        //                             decimal:',', 
+        //                             affixesStay: '',
+        //                             precision:3
+        //                         });
 
         $("#valor").maskMoney({
                                     prefix:'',
@@ -129,12 +129,12 @@
 
             combustivel = $("#combustivel").val();
             combustivel_nome = $(`option[value="${combustivel}"]`).text();
-            quantidade = $("#quantidade").val();
+            // quantidade = $("#quantidade").val();
             valor = $("#valor").val();
             cliente = $("#cliente").val();
 
 
-            if(!combustivel || !quantidade || !valor){
+            if(!combustivel || /*!quantidade ||*/ !valor){
                 $.alert({
                     title:"Erro",
                     content:"Preencha os campos obrigatórios!",
@@ -147,9 +147,9 @@
                 title:"Confirmação da Venda",
                 content:`Sua venda está definida com os seguintes dados:
                         <br>Combustível: <b>${combustivel_nome}</b>
-                        <br>Litros: <b>${quantidade}</b>
+                        <!--<br>Litros: <b>${quantidade}</b>-->
                         <br>Valor: <b>${valor}</b>
-                        <br>Cliente: <b>${cliente}</b>`,
+                        <br>Nome do Cliente: <b>${cliente}</b>`,
                 type:"blue",
                 buttons:{
                     'Sim':function(){
@@ -167,7 +167,7 @@
                                 codUsr,
                                 acao:"venda",
                                 combustivel,
-                                quantidade,
+                                // quantidade,
                                 valor,
                                 cliente
                             },  
