@@ -1,8 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/lib/includes.php");
   
-      if($_POST['situacao']){
-        $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+      if($_POST['pago']){
+        $query = "update usuarios set pago = '{$_POST['opc']}' where codigo = '{$_POST['pago']}'";
         sisLog($query);
         exit();
       }
@@ -111,11 +111,11 @@
         })
 
 
-        $(document).off("change").on("change",".situacao",function(){
+        $(document).off("change").on("change",".pago",function(){
 
             alert('ok')
 
-            situacao = $(this).attr("usuario");
+            pago = $(this).attr("pago");
             opc = false;
 
             if($(this).prop("checked") == true){
@@ -129,7 +129,7 @@
                 url:"src/vendas/index.php",
                 type:"POST",
                 data:{
-                    situacao,
+                    pago,
                     opc
                 },
                 success:function(dados){
