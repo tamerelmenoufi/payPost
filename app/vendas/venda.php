@@ -56,7 +56,7 @@
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$s->codigo?>"><?=$s->bomba?></option>
+                    <option value="<?=$s->codigo?>" bomba="<?=$s->codigo?>"><?=$s->bomba?></option>
                     <?php
                     }
                     ?>
@@ -71,7 +71,7 @@
                     $r = mysqli_query($con, $q);
                     while($s = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$s->codigo?>"><?=$s->combustivel?></option>
+                    <option value="<?=$s->codigo?>" combustivel="<?=$s->codigo?>"><?=$s->combustivel?></option>
                     <?php
                     }
                     ?>
@@ -144,7 +144,8 @@
 
             bomba = $("#bomba").val();
             combustivel = $("#combustivel").val();
-            combustivel_nome = $(`option[value="${combustivel}"]`).text();
+            combustivel_nome = $(`option[combustivel="${combustivel}"]`).text();
+            bomba_nome = $(`option[bomba="${bomba}"]`).text();
             // quantidade = $("#quantidade").val();
             valor = $("#valor").val();
             cliente = $("#cliente").val();
@@ -163,6 +164,7 @@
             $.confirm({
                 title:"Confirmação da Venda",
                 content:`Sua venda está definida com os seguintes dados:
+                        <br>Bomba: <b>${bomba_nome}</b>
                         <br>Combustível: <b>${combustivel_nome}</b>
                         <br>Valor: <b>${valor}</b>
                         <br>Nome do Cliente: <b>${cliente}</b>`,
