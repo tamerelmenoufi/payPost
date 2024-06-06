@@ -112,7 +112,7 @@
         })
 
 
-        $(document).off("change").on("change",".pago",function(){
+        $(document).off("click").on("click",".pago",function(){
 
             pago = $(this).attr("pago");
             opc = false;
