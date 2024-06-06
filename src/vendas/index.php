@@ -74,7 +74,7 @@
   </div>
 </div>
 
-<div class="popupConfirm" style="position:fixed; left:50px; top:90px; width:150px; height:90px; display:none; z-index:99">
+<div class="popupConfirm" style="position:fixed; left:50px; top:90px; width:150px; height:90px; z-index:99">
   <div class="alert alert-success" role="alert">
     Validação realizada com sucesso!
   </div>
