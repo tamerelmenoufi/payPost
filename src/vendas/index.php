@@ -10,6 +10,8 @@
 
 ?>
 
+
+
 <div class="col">
   <div class="m-3">
 
@@ -72,6 +74,12 @@
   </div>
 </div>
 
+<div class="popupConfirm" style="position:fixed; left:50px; top:90px; width:150px; height:90px; display:none; z-index:99">
+  <div class="alert alert-success" role="alert">
+    Validação realizada com sucesso!
+  </div>
+</div>
+
 
 <script>
     $(function(){
@@ -83,11 +91,16 @@
             success:function(dados){
                 $(".lista_vendas").html(dados);
             }
-        })        
+        })       
+        
+        tempo = setTimeout(() => {
+          $(".popupConfirm").css("display:none");
+        }, 2000);
 
 
         $(document).off("click").on("click", "button[delete]", function(){
             deletar = $(this).attr("delete");
+            $(".popupConfirm").css("display:flex");
             $.confirm({
                 content:"Deseja realmente excluir a venda ?",
                 title:false,
@@ -101,6 +114,7 @@
                             },
                             success:function(dados){
                                 $(".lista_vendas").html(dados);
+                                tempo();
                             }
                         })
                     },
